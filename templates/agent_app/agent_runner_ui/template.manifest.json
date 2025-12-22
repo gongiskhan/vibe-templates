@@ -1,0 +1,79 @@
+{
+  "template_id": "agent_runner_ui",
+  "name": "Agent Runner UI",
+  "version": "1.0.0",
+  "description": "A UI template for running AI agents on demand with streaming output, file uploads, and integrations support. Designed to connect to the Maestric platform API.",
+  "stack": [
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "shadcn",
+    "framer-motion",
+    "lucide-react"
+  ],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "environment": {
+    "MAESTRIC_API_BASE_URL": {
+      "description": "Base URL of the Maestric platform API (e.g., https://api.maestric.io)",
+      "required": false,
+      "default": null
+    },
+    "MAESTRIC_API_KEY": {
+      "description": "API key for development/testing. In production, uses cookie/session auth.",
+      "required": false,
+      "default": null
+    }
+  },
+  "branding": {
+    "tokensPath": "src/brand/tokens.css",
+    "configPath": "src/brand/brand.config.ts",
+    "logoDir": "public/brand",
+    "description": "All brand customization is centralized. Edit tokens.css for colors/typography, brand.config.ts for metadata, and replace logos in public/brand/"
+  },
+  "exposed_pages": [
+    {
+      "route": "/",
+      "name": "Agent Runner",
+      "description": "Main agent runner interface with agent picker, file uploads, and streaming output"
+    },
+    {
+      "route": "/history",
+      "name": "Run History",
+      "description": "View past agent runs and their outputs"
+    }
+  ],
+  "features": {
+    "responsive": true,
+    "darkMode": true,
+    "streaming": true,
+    "fileUpload": true,
+    "mockData": true,
+    "maestricIntegration": true
+  },
+  "api_endpoints": {
+    "description": "This template expects the following Maestric platform API endpoints",
+    "endpoints": [
+      "GET /api/agents - List available agents",
+      "GET /api/integrations/active - List active integrations",
+      "POST /api/agents/runs - Create a new agent run",
+      "GET /api/agents/runs/:id - Get run status",
+      "GET /api/agents/runs/:id/stream - SSE stream for run output",
+      "GET /api/agents/runs?agent_id=... - List run history",
+      "POST /api/files - Upload files (multipart)"
+    ]
+  },
+  "directories": {
+    "components": "src/components",
+    "pages": "src/app",
+    "hooks": "src/hooks",
+    "utilities": "src/lib",
+    "brand": "src/brand",
+    "publicAssets": "public"
+  }
+}

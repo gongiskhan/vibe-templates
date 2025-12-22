@@ -1,0 +1,61 @@
+/*
+ * Brand Design Tokens
+ *
+ * This file contains all customizable brand tokens.
+ * Colors use HSL format: "hue saturation% lightness%"
+ * Edit these values to customize the look and feel.
+ */
+
+@theme {
+  /* Primary brand color */
+  --brand-primary: 262 83% 58%;
+  --brand-primary-foreground: 0 0% 100%;
+
+  /* Accent color */
+  --brand-accent: 222 47% 51%;
+  --brand-accent-foreground: 0 0% 100%;
+
+  /* Success, warning, error states */
+  --brand-success: 142 71% 45%;
+  --brand-warning: 38 92% 50%;
+  --brand-error: 0 84% 60%;
+
+  /* Surface colors - Light mode */
+  --brand-bg: 0 0% 100%;
+  --brand-bg-secondary: 0 0% 98%;
+  --brand-fg: 224 71% 4%;
+  --brand-fg-muted: 220 9% 46%;
+
+  /* Border and dividers */
+  --brand-border: 220 13% 91%;
+  --brand-ring: 262 83% 58%;
+
+  /* Typography */
+  --brand-font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --brand-font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+
+  /* Spacing and sizing */
+  --brand-radius: 0.5rem;
+  --brand-radius-sm: 0.25rem;
+  --brand-radius-lg: 0.75rem;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --brand-bg: 224 71% 4%;
+    --brand-bg-secondary: 220 14% 10%;
+    --brand-fg: 0 0% 98%;
+    --brand-fg-muted: 220 9% 60%;
+    --brand-border: 220 13% 20%;
+  }
+}
+
+/* Manual dark mode class */
+.dark {
+  --brand-bg: 224 71% 4%;
+  --brand-bg-secondary: 220 14% 10%;
+  --brand-fg: 0 0% 98%;
+  --brand-fg-muted: 220 9% 60%;
+  --brand-border: 220 13% 20%;
+}
