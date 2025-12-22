@@ -1,0 +1,151 @@
+/* ============================================
+   BRAND TOKENS - Customize these to rebrand
+   ============================================
+
+   This file contains all brand-specific design tokens.
+   To rebrand the application, modify only this file and brand.config.ts.
+
+   Available tokens:
+   - Colors (primary, accent, semantic)
+   - Typography (font families)
+   - Shape (border radius)
+   - Surfaces (backgrounds, cards)
+*/
+
+:root {
+  /* =====================
+     BRAND COLORS
+     ===================== */
+
+  /* Primary brand color - main CTA buttons, links, active states */
+  --brand-primary: 222 47% 51%;
+  --brand-primary-foreground: 0 0% 100%;
+
+  /* Accent color - highlights, badges, secondary actions */
+  --brand-accent: 262 83% 58%;
+  --brand-accent-foreground: 0 0% 100%;
+
+  /* =====================
+     SURFACE COLORS
+     ===================== */
+
+  /* Main background */
+  --brand-bg: 0 0% 100%;
+  --brand-fg: 224 71% 4%;
+
+  /* Card/elevated surfaces */
+  --brand-card: 0 0% 100%;
+  --brand-card-foreground: 224 71% 4%;
+
+  /* Popover/dropdown backgrounds */
+  --brand-popover: 0 0% 100%;
+  --brand-popover-foreground: 224 71% 4%;
+
+  /* Muted backgrounds for subtle elements */
+  --brand-muted: 220 14% 96%;
+  --brand-muted-foreground: 220 9% 46%;
+
+  /* =====================
+     SEMANTIC COLORS
+     ===================== */
+
+  /* Destructive actions (delete, error) */
+  --brand-destructive: 0 84% 60%;
+  --brand-destructive-foreground: 0 0% 98%;
+
+  /* =====================
+     BORDER & INPUT
+     ===================== */
+
+  --brand-border: 220 13% 91%;
+  --brand-input: 220 13% 91%;
+  --brand-ring: 222 47% 51%;
+
+  /* =====================
+     TYPOGRAPHY
+     ===================== */
+
+  --brand-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --brand-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* =====================
+     SHAPE
+     ===================== */
+
+  --brand-radius: 0.5rem;
+
+  /* =====================
+     SIDEBAR (App Shell)
+     ===================== */
+
+  --brand-sidebar-bg: 220 14% 96%;
+  --brand-sidebar-fg: 224 71% 4%;
+  --brand-sidebar-border: 220 13% 91%;
+  --brand-sidebar-accent: 222 47% 51%;
+  --brand-sidebar-accent-foreground: 0 0% 100%;
+}
+
+/* =====================
+   DARK MODE TOKENS
+   ===================== */
+
+.dark {
+  /* Primary brand color */
+  --brand-primary: 217 91% 60%;
+  --brand-primary-foreground: 222 47% 11%;
+
+  /* Accent color */
+  --brand-accent: 262 83% 68%;
+  --brand-accent-foreground: 0 0% 100%;
+
+  /* Surface colors */
+  --brand-bg: 224 71% 4%;
+  --brand-fg: 210 20% 98%;
+
+  --brand-card: 224 71% 4%;
+  --brand-card-foreground: 210 20% 98%;
+
+  --brand-popover: 224 71% 4%;
+  --brand-popover-foreground: 210 20% 98%;
+
+  --brand-muted: 215 28% 17%;
+  --brand-muted-foreground: 218 11% 65%;
+
+  /* Semantic colors */
+  --brand-destructive: 0 63% 31%;
+  --brand-destructive-foreground: 0 0% 98%;
+
+  /* Border & input */
+  --brand-border: 215 28% 17%;
+  --brand-input: 215 28% 17%;
+  --brand-ring: 217 91% 60%;
+
+  /* Sidebar */
+  --brand-sidebar-bg: 222 47% 8%;
+  --brand-sidebar-fg: 210 20% 98%;
+  --brand-sidebar-border: 215 28% 17%;
+  --brand-sidebar-accent: 217 91% 60%;
+  --brand-sidebar-accent-foreground: 222 47% 11%;
+}
+
+/* =====================
+   CHART COLORS
+   =====================
+   Used for data visualization
+*/
+
+:root {
+  --chart-1: 222 47% 51%;
+  --chart-2: 262 83% 58%;
+  --chart-3: 142 71% 45%;
+  --chart-4: 43 96% 56%;
+  --chart-5: 340 82% 52%;
+}
+
+.dark {
+  --chart-1: 217 91% 60%;
+  --chart-2: 262 83% 68%;
+  --chart-3: 142 71% 45%;
+  --chart-4: 43 96% 56%;
+  --chart-5: 340 82% 52%;
+}

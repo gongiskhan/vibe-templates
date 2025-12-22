@@ -1,0 +1,76 @@
+{
+  "template_id": "web_app_internal_tool",
+  "name": "Web App Internal Tool",
+  "version": "1.0.0",
+  "description": "A production-grade internal tool template with modern UI patterns",
+  "stack": [
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "shadcn",
+    "framer-motion",
+    "recharts",
+    "lucide-react"
+  ],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "branding": {
+    "tokensPath": "src/brand/tokens.css",
+    "configPath": "src/brand/brand.config.ts",
+    "logoDir": "public/brand",
+    "description": "All brand customization is centralized. Edit tokens.css for colors/typography, brand.config.ts for metadata, and replace logos in public/brand/"
+  },
+  "exposed_pages": [
+    {
+      "route": "/",
+      "name": "Dashboard",
+      "description": "Main dashboard with KPIs, charts, and activity feed"
+    },
+    {
+      "route": "/projects",
+      "name": "Projects",
+      "description": "Project list with table, filters, create modal, and detail drawer"
+    },
+    {
+      "route": "/activity",
+      "name": "Activity",
+      "description": "Audit trail with filters and expandable details"
+    },
+    {
+      "route": "/settings",
+      "name": "Settings",
+      "description": "Application settings with brand preview and preferences"
+    },
+    {
+      "route": "/playground",
+      "name": "Playground",
+      "description": "Component showcase and documentation"
+    },
+    {
+      "route": "/login",
+      "name": "Login",
+      "description": "Authentication page (mocked)"
+    }
+  ],
+  "features": {
+    "responsive": true,
+    "darkMode": true,
+    "commandPalette": true,
+    "collapsibleSidebar": true,
+    "toasts": true,
+    "mockData": true
+  },
+  "directories": {
+    "components": "src/components",
+    "pages": "src/app",
+    "hooks": "src/hooks",
+    "utilities": "src/lib",
+    "brand": "src/brand",
+    "publicAssets": "public"
+  }
+}
