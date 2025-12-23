@@ -8,13 +8,13 @@ A collection of production-ready templates for building applications with modern
 
 | Template | Description | Stack |
 |----------|-------------|-------|
-| [Next.js Internal Tool](./templates/web_app/nextjs-internal-tool) | Enterprise-ready internal tool with dashboard, projects, activity trail | Next.js, TypeScript, Tailwind, shadcn/ui |
+| [Next.js Internal Tool](nextjs-internal-tool) | Enterprise-ready internal tool with dashboard, projects, activity trail | Next.js, TypeScript, Tailwind, shadcn/ui |
 
 ### Agent Apps
 
 | Template | Description | Stack |
 |----------|-------------|-------|
-| [Agent Runner UI](./templates/agent_app/agent_runner_ui) | UI for running AI agents with streaming output, file uploads, and integrations | Next.js, TypeScript, Tailwind, shadcn/ui, Framer Motion |
+| [Agent Runner UI](agent_runner_ui) | UI for running AI agents with streaming output, file uploads, and integrations | Next.js, TypeScript, Tailwind, shadcn/ui, Framer Motion |
 
 ## Usage
 

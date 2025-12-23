@@ -69,7 +69,7 @@ export default function LoginPage() {
       >
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <Link href="/">
+          <Link href="/nextjs-internal-tool/public">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={logoSrc} alt={brand.appName} className="h-10 w-auto" />
           </Link>

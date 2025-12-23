@@ -86,7 +86,7 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
     >
       {/* Logo */}
       <div className="flex h-14 items-center border-b border-sidebar-border px-3">
-        <Link href="/" className="flex items-center gap-2 overflow-hidden">
+        <Link href="/nextjs-internal-tool/public" className="flex items-center gap-2 overflow-hidden">
           <motion.div
             initial={false}
             animate={{ width: collapsed ? 40 : 160 }}
