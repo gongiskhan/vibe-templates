@@ -1,0 +1,102 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "running": "Running...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "close": "Close",
+    "search": "Search",
+    "refresh": "Refresh",
+    "retry": "Retry",
+    "download": "Download",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "mockMode": "Mock Mode"
+  },
+  "header": {
+    "subtitle": "Run agents on demand"
+  },
+  "agent": {
+    "selectAgent": "Select Agent",
+    "selectAgentDescription": "Choose an agent to run your task",
+    "selectAnAgent": "Select an agent",
+    "chooseAgent": "Choose an agent to run",
+    "searchAgents": "Search agents...",
+    "noAgentsFound": "No agents found",
+    "version": "v{version}",
+    "moreTags": "+{count}"
+  },
+  "instructions": {
+    "title": "Instructions",
+    "description": "Describe what you want the agent to do",
+    "placeholder": "Enter detailed instructions for the agent...",
+    "helper": "Be specific about the desired output and any constraints"
+  },
+  "inputs": {
+    "title": "Inputs",
+    "description": "Provide additional context for the agent",
+    "files": "Files",
+    "links": "Links",
+    "notes": "Notes",
+    "notesPlaceholder": "Additional notes or context...",
+    "dropFiles": "Drop files here or",
+    "browse": "browse",
+    "maxFiles": "Max {count} files, {size}MB each",
+    "uploading": "Uploading...",
+    "uploaded": "Uploaded",
+    "uploadFailed": "Upload failed",
+    "fileTooLarge": "File too large (max {size}MB)",
+    "addLink": "Add link",
+    "enterUrl": "Enter URL...",
+    "invalidUrl": "Invalid URL"
+  },
+  "integrations": {
+    "title": "Integrations",
+    "description": "Enable integrations for the agent to use",
+    "searchIntegrations": "Search integrations...",
+    "selected": "{count} selected",
+    "inactive": "Inactive",
+    "noIntegrations": "No integrations available"
+  },
+  "run": {
+    "runAgent": "Run Agent",
+    "running": "Running...",
+    "failedToStart": "Failed to start run"
+  },
+  "output": {
+    "title": "Output",
+    "description": "Agent execution output and artifacts",
+    "waitingForOutput": "Waiting for output...",
+    "noOutput": "No output yet",
+    "configureAndRun": "Configure your agent and click Run to see output here",
+    "tabs": {
+      "output": "Output",
+      "logs": "Logs ({count})",
+      "artifacts": "Artifacts ({count})"
+    },
+    "noArtifacts": "No artifacts generated yet",
+    "resultSummary": "Result Summary"
+  },
+  "history": {
+    "title": "History",
+    "description": "Previous runs for this agent",
+    "selectAgent": "Select an agent to view run history",
+    "runHistory": "Run History",
+    "noRuns": "No runs yet for this agent",
+    "duration": "{time}",
+    "artifacts": "{count} artifact(s)",
+    "failedToLoad": "Failed to load run history"
+  },
+  "status": {
+    "completed": "Completed",
+    "failed": "Failed",
+    "running": "Running",
+    "pending": "Pending",
+    "ready": "Ready",
+    "started": "Started {date}"
+  }
+}

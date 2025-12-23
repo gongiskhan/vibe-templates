@@ -22,36 +22,37 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { useBrand } from "@/brand"
+import { useTranslation } from "@/i18n"
 
 interface NavItem {
-  title: string
+  titleKey: string
   href: string
   icon: React.ComponentType<{ className?: string }>
 }
 
 const navItems: NavItem[] = [
   {
-    title: "Dashboard",
+    titleKey: "nav.dashboard",
     href: "/",
     icon: LayoutDashboard,
   },
   {
-    title: "Projects",
+    titleKey: "nav.projects",
     href: "/projects",
     icon: FolderKanban,
   },
   {
-    title: "Activity",
+    titleKey: "nav.activity",
     href: "/activity",
     icon: Activity,
   },
   {
-    title: "Settings",
+    titleKey: "nav.settings",
     href: "/settings",
     icon: Settings,
   },
   {
-    title: "Playground",
+    titleKey: "nav.playground",
     href: "/playground",
     icon: Puzzle,
   },
@@ -65,6 +66,7 @@ interface SidebarProps {
 export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
   const pathname = usePathname()
   const { brand, resolvedTheme } = useBrand()
+  const { t } = useTranslation()
 
   const logoSrc = collapsed
     ? resolvedTheme === "dark"
@@ -108,6 +110,7 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
           {navItems.map((item) => {
             const isActive = pathname === item.href
             const Icon = item.icon
+            const title = t(item.titleKey)
 
             const navLink = (
               <Link
@@ -131,7 +134,7 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
                       transition={{ duration: 0.15 }}
                       className="truncate"
                     >
-                      {item.title}
+                      {title}
                     </motion.span>
                   )}
                 </AnimatePresence>
@@ -143,7 +146,7 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
                 <Tooltip key={item.href} delayDuration={0}>
                   <TooltipTrigger asChild>{navLink}</TooltipTrigger>
                   <TooltipContent side="right" sideOffset={10}>
-                    {item.title}
+                    {title}
                   </TooltipContent>
                 </Tooltip>
               )
@@ -169,7 +172,7 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
           ) : (
             <>
               <ChevronLeft className="h-4 w-4 mr-2" />
-              <span>Collapse</span>
+              <span>{t("common.collapse")}</span>
             </>
           )}
         </Button>

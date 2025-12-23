@@ -35,6 +35,7 @@ import {
 import { Separator } from "@/components/ui/separator"
 import { mockActivity, mockUsers, type ActivityItem } from "@/lib/mock-data"
 import { formatDateTime, formatRelativeTime, cn } from "@/lib/utils"
+import { useTranslation } from "@/i18n"
 
 const activityIcons: Record<ActivityItem["type"], typeof FolderPlus> = {
   "project.created": FolderPlus,
@@ -56,22 +57,24 @@ const activityColors: Record<ActivityItem["type"], string> = {
   "settings.changed": "bg-gray-500/15 text-gray-600 dark:text-gray-400",
 }
 
-const activityTypeLabels: Record<ActivityItem["type"], string> = {
-  "project.created": "Project Created",
-  "project.updated": "Project Updated",
-  "user.joined": "User Joined",
-  "task.completed": "Task Completed",
-  "comment.added": "Comment Added",
-  "file.uploaded": "File Uploaded",
-  "settings.changed": "Settings Changed",
+const activityTypeKeys: Record<ActivityItem["type"], string> = {
+  "project.created": "activity.projectCreated",
+  "project.updated": "activity.projectUpdated",
+  "user.joined": "activity.userJoined",
+  "task.completed": "activity.taskCompleted",
+  "comment.added": "activity.commentAdded",
+  "file.uploaded": "activity.fileUploaded",
+  "settings.changed": "activity.settingsChanged",
 }
 
 function ActivityCard({
   activity,
   index,
+  t,
 }: {
   activity: ActivityItem
   index: number
+  t: (key: string, params?: Record<string, string | number>) => string
 }) {
   const [expanded, setExpanded] = React.useState(false)
   const Icon = activityIcons[activity.type]
@@ -120,7 +123,7 @@ function ActivityCard({
                   </p>
                 </div>
                 <Badge variant="secondary" className="shrink-0">
-                  {activityTypeLabels[activity.type]}
+                  {t(activityTypeKeys[activity.type])}
                 </Badge>
               </div>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -160,7 +163,7 @@ function ActivityCard({
                   <div className="grid gap-3 sm:grid-cols-2">
                     <div>
                       <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                        Timestamp
+                        {t("activity.timestamp")}
                       </p>
                       <p className="text-sm mt-1">
                         {formatDateTime(activity.timestamp)}
@@ -168,7 +171,7 @@ function ActivityCard({
                     </div>
                     <div>
                       <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                        Actor
+                        {t("activity.actor")}
                       </p>
                       <p className="text-sm mt-1">{activity.user.email}</p>
                     </div>
@@ -176,7 +179,7 @@ function ActivityCard({
                   {activity.metadata && (
                     <div>
                       <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                        Metadata
+                        {t("activity.metadata")}
                       </p>
                       <pre className="text-xs mt-1 p-2 bg-muted rounded-md overflow-x-auto">
                         {JSON.stringify(activity.metadata, null, 2)}
@@ -194,6 +197,7 @@ function ActivityCard({
 }
 
 export default function ActivityPage() {
+  const { t } = useTranslation()
   const [typeFilter, setTypeFilter] = React.useState<string>("all")
   const [userFilter, setUserFilter] = React.useState<string>("all")
   const [displayCount, setDisplayCount] = React.useState(10)
@@ -229,9 +233,9 @@ export default function ActivityPage() {
       {/* Page Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Activity</h1>
+          <h1 className="text-3xl font-bold tracking-tight">{t("activity.title")}</h1>
           <p className="text-muted-foreground">
-            Track all actions and changes across your workspace.
+            {t("activity.subtitle")}
           </p>
         </div>
         <Button
@@ -242,7 +246,7 @@ export default function ActivityPage() {
           <RefreshCw
             className={cn("mr-2 h-4 w-4", isRefreshing && "animate-spin")}
           />
-          Refresh
+          {t("common.refresh")}
         </Button>
       </div>
 
@@ -252,7 +256,7 @@ export default function ActivityPage() {
           <PopoverTrigger asChild>
             <Button variant="outline" size="sm">
               <Calendar className="mr-2 h-4 w-4" />
-              Date Range
+              {t("activity.dateRange")}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-4" align="start">
@@ -265,26 +269,26 @@ export default function ActivityPage() {
         <Select value={typeFilter} onValueChange={setTypeFilter}>
           <SelectTrigger className="w-40">
             <Filter className="mr-2 h-4 w-4" />
-            <SelectValue placeholder="Type" />
+            <SelectValue placeholder={t("activity.type")} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Types</SelectItem>
-            <SelectItem value="project.created">Project Created</SelectItem>
-            <SelectItem value="project.updated">Project Updated</SelectItem>
-            <SelectItem value="user.joined">User Joined</SelectItem>
-            <SelectItem value="task.completed">Task Completed</SelectItem>
-            <SelectItem value="comment.added">Comment Added</SelectItem>
-            <SelectItem value="file.uploaded">File Uploaded</SelectItem>
-            <SelectItem value="settings.changed">Settings Changed</SelectItem>
+            <SelectItem value="all">{t("activity.allTypes")}</SelectItem>
+            <SelectItem value="project.created">{t("activity.projectCreated")}</SelectItem>
+            <SelectItem value="project.updated">{t("activity.projectUpdated")}</SelectItem>
+            <SelectItem value="user.joined">{t("activity.userJoined")}</SelectItem>
+            <SelectItem value="task.completed">{t("activity.taskCompleted")}</SelectItem>
+            <SelectItem value="comment.added">{t("activity.commentAdded")}</SelectItem>
+            <SelectItem value="file.uploaded">{t("activity.fileUploaded")}</SelectItem>
+            <SelectItem value="settings.changed">{t("activity.settingsChanged")}</SelectItem>
           </SelectContent>
         </Select>
 
         <Select value={userFilter} onValueChange={setUserFilter}>
           <SelectTrigger className="w-40">
-            <SelectValue placeholder="User" />
+            <SelectValue placeholder={t("activity.user")} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Users</SelectItem>
+            <SelectItem value="all">{t("activity.allUsers")}</SelectItem>
             {mockUsers.map((user) => (
               <SelectItem key={user.id} value={user.id}>
                 {user.name}
@@ -302,15 +306,14 @@ export default function ActivityPage() {
               setUserFilter("all")
             }}
           >
-            Clear filters
+            {t("common.clearFilters")}
           </Button>
         )}
       </div>
 
       {/* Results count */}
       <p className="text-sm text-muted-foreground">
-        Showing {displayedActivities.length} of {filteredActivities.length}{" "}
-        activities
+        {t("activity.showing", { count: displayedActivities.length, total: filteredActivities.length })}
       </p>
 
       {/* Activity List */}
@@ -318,15 +321,15 @@ export default function ActivityPage() {
         {displayedActivities.length === 0 ? (
           <Card>
             <CardContent className="flex flex-col items-center justify-center py-12">
-              <p className="text-muted-foreground">No activities found</p>
+              <p className="text-muted-foreground">{t("activity.noActivity")}</p>
               <p className="text-sm text-muted-foreground">
-                Try adjusting your filters
+                {t("common.clearFilters")}
               </p>
             </CardContent>
           </Card>
         ) : (
           displayedActivities.map((activity, index) => (
-            <ActivityCard key={activity.id} activity={activity} index={index} />
+            <ActivityCard key={activity.id} activity={activity} index={index} t={t} />
           ))
         )}
       </div>
@@ -335,7 +338,7 @@ export default function ActivityPage() {
       {hasMore && (
         <div className="flex justify-center">
           <Button variant="outline" onClick={handleLoadMore}>
-            Load more activities
+            {t("activity.loadMore")}
           </Button>
         </div>
       )}

@@ -17,8 +17,10 @@ import {
   ProjectDetailsDrawer,
 } from "@/components/projects"
 import { mockProjects, type Project } from "@/lib/mock-data"
+import { useTranslation } from "@/i18n"
 
 export default function ProjectsPage() {
+  const { t } = useTranslation()
   const [search, setSearch] = React.useState("")
   const [statusFilter, setStatusFilter] = React.useState<string>("all")
   const [createModalOpen, setCreateModalOpen] = React.useState(false)
@@ -52,14 +54,14 @@ export default function ProjectsPage() {
       {/* Page Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Projects</h1>
+          <h1 className="text-3xl font-bold tracking-tight">{t("projects.title")}</h1>
           <p className="text-muted-foreground">
-            Manage and track all your projects in one place.
+            {t("projects.subtitle")}
           </p>
         </div>
         <Button onClick={() => setCreateModalOpen(true)}>
           <Plus className="mr-2 h-4 w-4" />
-          New Project
+          {t("projects.newProject")}
         </Button>
       </div>
 
@@ -68,7 +70,7 @@ export default function ProjectsPage() {
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
-            placeholder="Search projects..."
+            placeholder={t("projects.searchPlaceholder")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9"
@@ -77,14 +79,14 @@ export default function ProjectsPage() {
         <Select value={statusFilter} onValueChange={setStatusFilter}>
           <SelectTrigger className="w-full sm:w-40">
             <Filter className="mr-2 h-4 w-4" />
-            <SelectValue placeholder="Status" />
+            <SelectValue placeholder={t("projects.status")} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Status</SelectItem>
-            <SelectItem value="active">Active</SelectItem>
-            <SelectItem value="paused">Paused</SelectItem>
-            <SelectItem value="completed">Completed</SelectItem>
-            <SelectItem value="archived">Archived</SelectItem>
+            <SelectItem value="all">{t("projects.allStatus")}</SelectItem>
+            <SelectItem value="active">{t("projects.active")}</SelectItem>
+            <SelectItem value="paused">{t("projects.paused")}</SelectItem>
+            <SelectItem value="completed">{t("projects.completed")}</SelectItem>
+            <SelectItem value="archived">{t("projects.archived")}</SelectItem>
           </SelectContent>
         </Select>
       </div>

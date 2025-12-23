@@ -1,0 +1,102 @@
+{
+  "common": {
+    "loading": "A carregar...",
+    "running": "A executar...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "close": "Fechar",
+    "search": "Pesquisar",
+    "refresh": "Atualizar",
+    "retry": "Tentar novamente",
+    "download": "Transferir",
+    "language": "Idioma",
+    "theme": "Tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "mockMode": "Modo de Simulação"
+  },
+  "header": {
+    "subtitle": "Executar agentes a pedido"
+  },
+  "agent": {
+    "selectAgent": "Selecionar Agente",
+    "selectAgentDescription": "Escolha um agente para executar a sua tarefa",
+    "selectAnAgent": "Selecione um agente",
+    "chooseAgent": "Escolha um agente para executar",
+    "searchAgents": "Pesquisar agentes...",
+    "noAgentsFound": "Nenhum agente encontrado",
+    "version": "v{version}",
+    "moreTags": "+{count}"
+  },
+  "instructions": {
+    "title": "Instruções",
+    "description": "Descreva o que pretende que o agente faça",
+    "placeholder": "Introduza instruções detalhadas para o agente...",
+    "helper": "Seja específico sobre o resultado desejado e quaisquer restrições"
+  },
+  "inputs": {
+    "title": "Entradas",
+    "description": "Forneça contexto adicional para o agente",
+    "files": "Ficheiros",
+    "links": "Links",
+    "notes": "Notas",
+    "notesPlaceholder": "Notas ou contexto adicional...",
+    "dropFiles": "Arraste ficheiros aqui ou",
+    "browse": "procure",
+    "maxFiles": "Máx. {count} ficheiros, {size}MB cada",
+    "uploading": "A carregar...",
+    "uploaded": "Carregado",
+    "uploadFailed": "Falha no carregamento",
+    "fileTooLarge": "Ficheiro demasiado grande (máx. {size}MB)",
+    "addLink": "Adicionar link",
+    "enterUrl": "Introduza o URL...",
+    "invalidUrl": "URL inválido"
+  },
+  "integrations": {
+    "title": "Integrações",
+    "description": "Ative integrações para o agente utilizar",
+    "searchIntegrations": "Pesquisar integrações...",
+    "selected": "{count} selecionadas",
+    "inactive": "Inativo",
+    "noIntegrations": "Nenhuma integração disponível"
+  },
+  "run": {
+    "runAgent": "Executar Agente",
+    "running": "A executar...",
+    "failedToStart": "Falha ao iniciar execução"
+  },
+  "output": {
+    "title": "Resultado",
+    "description": "Resultado da execução do agente e artefactos",
+    "waitingForOutput": "A aguardar resultado...",
+    "noOutput": "Sem resultado ainda",
+    "configureAndRun": "Configure o seu agente e clique em Executar para ver o resultado aqui",
+    "tabs": {
+      "output": "Resultado",
+      "logs": "Registos ({count})",
+      "artifacts": "Artefactos ({count})"
+    },
+    "noArtifacts": "Nenhum artefacto gerado ainda",
+    "resultSummary": "Resumo do Resultado"
+  },
+  "history": {
+    "title": "Histórico",
+    "description": "Execuções anteriores deste agente",
+    "selectAgent": "Selecione um agente para ver o histórico de execuções",
+    "runHistory": "Histórico de Execuções",
+    "noRuns": "Ainda não há execuções para este agente",
+    "duration": "{time}",
+    "artifacts": "{count} artefacto(s)",
+    "failedToLoad": "Falha ao carregar o histórico de execuções"
+  },
+  "status": {
+    "completed": "Concluído",
+    "failed": "Falhou",
+    "running": "A executar",
+    "pending": "Pendente",
+    "ready": "Pronto",
+    "started": "Iniciado {date}"
+  }
+}

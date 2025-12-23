@@ -2,15 +2,18 @@
 
 import { mockKPIs } from "@/lib/mock-data"
 import { KPICard, ActivityChart, RecentActivity, QuickActions } from "@/components/dashboard"
+import { useTranslation } from "@/i18n"
 
 export default function DashboardPage() {
+  const { t } = useTranslation()
+
   return (
     <div className="space-y-8">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+        <h1 className="text-3xl font-bold tracking-tight">{t("dashboard.title")}</h1>
         <p className="text-muted-foreground">
-          Welcome back! Here&apos;s what&apos;s happening with your projects.
+          {t("dashboard.welcome")}
         </p>
       </div>
 

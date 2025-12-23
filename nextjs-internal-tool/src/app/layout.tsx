@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { BrandProvider, brandConfig } from "@/brand"
+import { I18nProvider } from "@/i18n"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
@@ -15,14 +16,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt" suppressHydrationWarning>
       <body className="antialiased">
-        <BrandProvider defaultTheme="system">
-          <TooltipProvider delayDuration={0}>
-            {children}
-            <Toaster />
-          </TooltipProvider>
-        </BrandProvider>
+        <I18nProvider defaultLocale="pt">
+          <BrandProvider defaultTheme="system">
+            <TooltipProvider delayDuration={0}>
+              {children}
+              <Toaster />
+            </TooltipProvider>
+          </BrandProvider>
+        </I18nProvider>
       </body>
     </html>
   )

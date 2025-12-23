@@ -17,10 +17,12 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { useBrand } from "@/brand"
+import { useTranslation } from "@/i18n"
 import { toast } from "@/hooks/use-toast"
 
 export default function SettingsPage() {
   const { brand, theme, setTheme, resolvedTheme } = useBrand()
+  const { t } = useTranslation()
   const [notifications, setNotifications] = React.useState({
     email: true,
     push: true,
@@ -34,8 +36,8 @@ export default function SettingsPage() {
 
   const handleSaveProfile = () => {
     toast({
-      title: "Settings saved",
-      description: "Your profile settings have been updated.",
+      title: t("settings.saveChanges"),
+      description: t("settings.profileDescription"),
     })
   }
 
@@ -43,9 +45,9 @@ export default function SettingsPage() {
     <div className="space-y-8">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
+        <h1 className="text-3xl font-bold tracking-tight">{t("settings.title")}</h1>
         <p className="text-muted-foreground">
-          Manage your account and application preferences.
+          {t("settings.subtitle")}
         </p>
       </div>
 
@@ -58,9 +60,9 @@ export default function SettingsPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Brand</CardTitle>
+              <CardTitle>{t("settings.brand")}</CardTitle>
               <CardDescription>
-                Current brand configuration and theme settings.
+                {t("settings.brandDescription")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -87,7 +89,7 @@ export default function SettingsPage() {
               {/* Theme Selection */}
               {brand.features.allowThemeToggle && (
                 <div className="space-y-4">
-                  <Label>Theme</Label>
+                  <Label>{t("settings.themeLabel")}</Label>
                   <div className="grid grid-cols-3 gap-3">
                     <Button
                       variant={theme === "light" ? "default" : "outline"}
@@ -95,7 +97,7 @@ export default function SettingsPage() {
                       onClick={() => setTheme("light")}
                     >
                       <Sun className="mr-2 h-4 w-4" />
-                      Light
+                      {t("common.light")}
                     </Button>
                     <Button
                       variant={theme === "dark" ? "default" : "outline"}
@@ -103,7 +105,7 @@ export default function SettingsPage() {
                       onClick={() => setTheme("dark")}
                     >
                       <Moon className="mr-2 h-4 w-4" />
-                      Dark
+                      {t("common.dark")}
                     </Button>
                     <Button
                       variant={theme === "system" ? "default" : "outline"}
@@ -111,7 +113,7 @@ export default function SettingsPage() {
                       onClick={() => setTheme("system")}
                     >
                       <Monitor className="mr-2 h-4 w-4" />
-                      System
+                      {t("common.system")}
                     </Button>
                   </div>
                 </div>
@@ -120,14 +122,7 @@ export default function SettingsPage() {
               {/* Brand Customization Note */}
               <div className="rounded-lg border bg-muted/50 p-4">
                 <p className="text-sm text-muted-foreground">
-                  To customize branding, edit{" "}
-                  <code className="rounded bg-muted px-1 py-0.5 text-xs">
-                    src/brand/tokens.css
-                  </code>{" "}
-                  and{" "}
-                  <code className="rounded bg-muted px-1 py-0.5 text-xs">
-                    src/brand/brand.config.ts
-                  </code>
+                  {t("settings.brandCustomization")}
                 </p>
               </div>
             </CardContent>
@@ -142,24 +137,24 @@ export default function SettingsPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Profile</CardTitle>
+              <CardTitle>{t("settings.profile")}</CardTitle>
               <CardDescription>
-                Update your personal information.
+                {t("settings.profileDescription")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName">First name</Label>
+                  <Label htmlFor="firstName">{t("settings.firstName")}</Label>
                   <Input id="firstName" defaultValue="Sarah" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastName">Last name</Label>
+                  <Label htmlFor="lastName">{t("settings.lastName")}</Label>
                   <Input id="lastName" defaultValue="Chen" />
                 </div>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t("settings.email")}</Label>
                 <Input
                   id="email"
                   type="email"
@@ -167,29 +162,29 @@ export default function SettingsPage() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="timezone">Timezone</Label>
+                <Label htmlFor="timezone">{t("settings.timezone")}</Label>
                 <Select defaultValue="utc-8">
                   <SelectTrigger id="timezone">
-                    <SelectValue placeholder="Select timezone" />
+                    <SelectValue placeholder={t("settings.timezone")} />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="utc-8">
-                      Pacific Time (UTC-8)
+                      {t("timezones.pacificTime")}
                     </SelectItem>
                     <SelectItem value="utc-5">
-                      Eastern Time (UTC-5)
+                      {t("timezones.easternTime")}
                     </SelectItem>
-                    <SelectItem value="utc+0">UTC</SelectItem>
+                    <SelectItem value="utc+0">{t("timezones.utc")}</SelectItem>
                     <SelectItem value="utc+1">
-                      Central European Time (UTC+1)
+                      {t("timezones.centralEuropean")}
                     </SelectItem>
                     <SelectItem value="utc+8">
-                      China Standard Time (UTC+8)
+                      {t("timezones.britishTime")}
                     </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
-              <Button onClick={handleSaveProfile}>Save changes</Button>
+              <Button onClick={handleSaveProfile}>{t("settings.saveChanges")}</Button>
             </CardContent>
           </Card>
         </motion.div>
@@ -202,17 +197,17 @@ export default function SettingsPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Notifications</CardTitle>
+              <CardTitle>{t("settings.notifications")}</CardTitle>
               <CardDescription>
-                Configure how you receive notifications.
+                {t("settings.notificationsDescription")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label>Email notifications</Label>
+                  <Label>{t("settings.emailNotifications")}</Label>
                   <p className="text-sm text-muted-foreground">
-                    Receive updates about your projects via email
+                    {t("settings.emailNotificationsHelp")}
                   </p>
                 </div>
                 <Switch
@@ -225,9 +220,9 @@ export default function SettingsPage() {
               <Separator />
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label>Push notifications</Label>
+                  <Label>{t("settings.pushNotifications")}</Label>
                   <p className="text-sm text-muted-foreground">
-                    Get push notifications on your device
+                    {t("settings.pushNotificationsHelp")}
                   </p>
                 </div>
                 <Switch
@@ -240,9 +235,9 @@ export default function SettingsPage() {
               <Separator />
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label>Marketing emails</Label>
+                  <Label>{t("settings.marketingEmails")}</Label>
                   <p className="text-sm text-muted-foreground">
-                    Receive news and product updates
+                    {t("settings.marketingEmailsHelp")}
                   </p>
                 </div>
                 <Switch
@@ -264,23 +259,23 @@ export default function SettingsPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Integrations</CardTitle>
+              <CardTitle>{t("settings.integrations")}</CardTitle>
               <CardDescription>
-                Connect with external services.
+                {t("settings.integrationsDescription")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               <Button variant="outline" className="w-full justify-start">
                 <ExternalLink className="mr-2 h-4 w-4" />
-                Connect to Slack
+                {t("settings.connectSlack")}
               </Button>
               <Button variant="outline" className="w-full justify-start">
                 <ExternalLink className="mr-2 h-4 w-4" />
-                Connect to GitHub
+                {t("settings.connectGitHub")}
               </Button>
               <Button variant="outline" className="w-full justify-start">
                 <ExternalLink className="mr-2 h-4 w-4" />
-                Connect to Jira
+                {t("settings.connectJira")}
               </Button>
             </CardContent>
           </Card>
@@ -296,30 +291,30 @@ export default function SettingsPage() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5 text-destructive" />
-                <CardTitle className="text-destructive">Danger Zone</CardTitle>
+                <CardTitle className="text-destructive">{t("settings.dangerZone")}</CardTitle>
               </div>
               <CardDescription>
-                Irreversible and destructive actions.
+                {t("projects.deleteWarning")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between rounded-lg border border-destructive/30 p-4">
                 <div>
-                  <p className="font-medium">Export all data</p>
+                  <p className="font-medium">{t("settings.exportData")}</p>
                   <p className="text-sm text-muted-foreground">
-                    Download all your data in a portable format
+                    {t("settings.exportData")}
                   </p>
                 </div>
-                <Button variant="outline">Export</Button>
+                <Button variant="outline">{t("settings.exportData")}</Button>
               </div>
               <div className="flex items-center justify-between rounded-lg border border-destructive/30 p-4">
                 <div>
-                  <p className="font-medium">Delete account</p>
+                  <p className="font-medium">{t("settings.deleteAccount")}</p>
                   <p className="text-sm text-muted-foreground">
-                    Permanently delete your account and all data
+                    {t("settings.deleteAccount")}
                   </p>
                 </div>
-                <Button variant="destructive">Delete</Button>
+                <Button variant="destructive">{t("common.delete")}</Button>
               </div>
             </CardContent>
           </Card>

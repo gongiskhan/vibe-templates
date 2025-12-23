@@ -4,6 +4,8 @@ import { useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { Play, Moon, Sun, Loader2, AlertCircle, StickyNote } from 'lucide-react'
 import { useBrand } from '@/brand'
+import { useTranslation } from '@/i18n'
+import { LanguageSwitcher } from '@/components/ui/language-switcher'
 import { createRun, streamRunOutput, USE_MOCK } from '@/lib/api-client'
 import type { Agent, UploadedFile, Run, StreamEvent } from '@/lib/types'
 import {
@@ -23,6 +25,7 @@ import { Separator } from '@/components/ui/separator'
 
 export default function AgentRunnerPage() {
   const { brand, theme, setTheme, resolvedTheme } = useBrand()
+  const { t } = useTranslation()
 
   // Agent state
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null)
@@ -118,10 +121,10 @@ export default function AgentRunnerPage() {
         }
       )
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to start run')
+      setError(err instanceof Error ? err.message : t('run.failedToStart'))
       setIsRunning(false)
     }
-  }, [selectedAgent, instructions, files, links, notes, selectedIntegrations])
+  }, [selectedAgent, instructions, files, links, notes, selectedIntegrations, t])
 
   const handleSelectHistoricalRun = useCallback((run: Run) => {
     setCurrentRun(run)
@@ -143,7 +146,7 @@ export default function AgentRunnerPage() {
             <div>
               <h1 className="font-semibold">{brand.appName}</h1>
               <p className="text-xs text-[hsl(var(--brand-fg-muted))]">
-                Run agents on demand
+                {t('header.subtitle')}
               </p>
             </div>
           </div>
@@ -151,9 +154,10 @@ export default function AgentRunnerPage() {
           <div className="flex items-center gap-3">
             {USE_MOCK && (
               <Badge variant="secondary" className="text-xs">
-                Mock Mode
+                {t('common.mockMode')}
               </Badge>
             )}
+            <LanguageSwitcher />
             <Button
               variant="ghost"
               size="icon"
@@ -183,9 +187,9 @@ export default function AgentRunnerPage() {
             >
               <Card>
                 <CardHeader>
-                  <CardTitle>Select Agent</CardTitle>
+                  <CardTitle>{t('agent.selectAgent')}</CardTitle>
                   <CardDescription>
-                    Choose an agent to run your task
+                    {t('agent.selectAgentDescription')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -205,21 +209,21 @@ export default function AgentRunnerPage() {
             >
               <Card>
                 <CardHeader>
-                  <CardTitle>Instructions</CardTitle>
+                  <CardTitle>{t('instructions.title')}</CardTitle>
                   <CardDescription>
-                    Describe what you want the agent to do
+                    {t('instructions.description')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Textarea
-                    placeholder="Enter detailed instructions for the agent..."
+                    placeholder={t('instructions.placeholder')}
                     value={instructions}
                     onChange={(e) => setInstructions(e.target.value)}
                     rows={6}
                     className="resize-none"
                   />
                   <p className="mt-2 text-xs text-[hsl(var(--brand-fg-muted))]">
-                    Be specific about the desired output and any constraints
+                    {t('instructions.helper')}
                   </p>
                 </CardContent>
               </Card>
@@ -233,9 +237,9 @@ export default function AgentRunnerPage() {
             >
               <Card>
                 <CardHeader>
-                  <CardTitle>Inputs</CardTitle>
+                  <CardTitle>{t('inputs.title')}</CardTitle>
                   <CardDescription>
-                    Provide additional context for the agent
+                    {t('inputs.description')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -250,10 +254,10 @@ export default function AgentRunnerPage() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <StickyNote className="h-4 w-4 text-[hsl(var(--brand-fg-muted))]" />
-                      <Label className="text-sm font-medium">Notes</Label>
+                      <Label className="text-sm font-medium">{t('inputs.notes')}</Label>
                     </div>
                     <Textarea
-                      placeholder="Additional notes or context..."
+                      placeholder={t('inputs.notesPlaceholder')}
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       rows={3}
@@ -272,9 +276,9 @@ export default function AgentRunnerPage() {
             >
               <Card>
                 <CardHeader>
-                  <CardTitle>Integrations</CardTitle>
+                  <CardTitle>{t('integrations.title')}</CardTitle>
                   <CardDescription>
-                    Enable integrations for the agent to use
+                    {t('integrations.description')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -309,12 +313,12 @@ export default function AgentRunnerPage() {
                 {isRunning ? (
                   <>
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Running...
+                    {t('run.running')}
                   </>
                 ) : (
                   <>
                     <Play className="h-4 w-4" />
-                    Run Agent
+                    {t('run.runAgent')}
                   </>
                 )}
               </Button>
@@ -331,9 +335,9 @@ export default function AgentRunnerPage() {
             >
               <Card>
                 <CardHeader>
-                  <CardTitle>Output</CardTitle>
+                  <CardTitle>{t('output.title')}</CardTitle>
                   <CardDescription>
-                    Agent execution output and artifacts
+                    {t('output.description')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -354,8 +358,8 @@ export default function AgentRunnerPage() {
             >
               <Card>
                 <CardHeader>
-                  <CardTitle>History</CardTitle>
-                  <CardDescription>Previous runs for this agent</CardDescription>
+                  <CardTitle>{t('history.title')}</CardTitle>
+                  <CardDescription>{t('history.description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <RunHistory

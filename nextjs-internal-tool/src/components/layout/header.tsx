@@ -15,6 +15,8 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useBrand } from "@/brand"
+import { useTranslation } from "@/i18n"
+import { LanguageSwitcher } from "@/components/ui/language-switcher"
 import { currentUser, mockNotifications, type Notification } from "@/lib/mock-data"
 import { formatRelativeTime } from "@/lib/utils"
 
@@ -25,6 +27,7 @@ interface HeaderProps {
 
 export function Header({ onMenuClick, onSearchClick }: HeaderProps) {
   const { brand, theme, setTheme } = useBrand()
+  const { t } = useTranslation()
   const unreadCount = mockNotifications.filter((n) => !n.read).length
 
   const getInitials = (name: string) => {
@@ -68,13 +71,16 @@ export function Header({ onMenuClick, onSearchClick }: HeaderProps) {
         onClick={onSearchClick}
       >
         <Search className="mr-2 h-4 w-4" />
-        <span className="hidden sm:inline-flex">Search...</span>
+        <span className="hidden sm:inline-flex">{t("common.search")}...</span>
         <kbd className="pointer-events-none absolute right-2 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs font-medium text-muted-foreground sm:flex">
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
 
       <div className="flex-1" />
+
+      {/* Language switcher */}
+      <LanguageSwitcher />
 
       {/* Theme toggle */}
       {brand.features.allowThemeToggle && (
@@ -83,27 +89,27 @@ export function Header({ onMenuClick, onSearchClick }: HeaderProps) {
             <Button variant="ghost" size="icon">
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
+              <span className="sr-only">{t("common.theme")}</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setTheme("light")}>
               <Sun className="mr-2 h-4 w-4" />
-              Light
+              {t("common.light")}
               {theme === "light" && (
                 <span className="ml-auto text-primary">✓</span>
               )}
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme("dark")}>
               <Moon className="mr-2 h-4 w-4" />
-              Dark
+              {t("common.dark")}
               {theme === "dark" && (
                 <span className="ml-auto text-primary">✓</span>
               )}
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme("system")}>
               <Monitor className="mr-2 h-4 w-4" />
-              System
+              {t("common.system")}
               {theme === "system" && (
                 <span className="ml-auto text-primary">✓</span>
               )}
@@ -122,12 +128,12 @@ export function Header({ onMenuClick, onSearchClick }: HeaderProps) {
                 {unreadCount}
               </span>
             )}
-            <span className="sr-only">Notifications</span>
+            <span className="sr-only">{t("settings.notifications")}</span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-80">
           <DropdownMenuLabel className="flex items-center justify-between">
-            Notifications
+            {t("settings.notifications")}
             {unreadCount > 0 && (
               <Badge variant="secondary" className="ml-2">
                 {unreadCount} new
@@ -202,12 +208,11 @@ export function Header({ onMenuClick, onSearchClick }: HeaderProps) {
             </div>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Profile</DropdownMenuItem>
-          <DropdownMenuItem>Settings</DropdownMenuItem>
-          <DropdownMenuItem>Help & Support</DropdownMenuItem>
+          <DropdownMenuItem>{t("settings.profile")}</DropdownMenuItem>
+          <DropdownMenuItem>{t("nav.settings")}</DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem className="text-destructive">
-            Sign out
+            {t("login.signIn")}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
