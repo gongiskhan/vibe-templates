@@ -1,0 +1,30 @@
+{
+  "name": "vibe-templates",
+  "version": "1.0.0",
+  "description": "Production-ready templates collection",
+  "private": true,
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:report": "playwright show-report e2e/test-results/html-report",
+    "test:internal-tool": "playwright test --project=nextjs-internal-tool",
+    "test:crud": "playwright test --project=nextjs_crud_app",
+    "test:dashboard": "playwright test --project=nextjs_dashboard_app",
+    "test:workflow": "playwright test --project=nextjs_workflow_app",
+    "test:explorer": "playwright test --project=nextjs_data_explorer",
+    "test:landing-site": "playwright test --project=nextjs_landing_site",
+    "test:agent-runner": "playwright test --project=agent_runner_ui",
+    "test:ai-assistant": "playwright test --project=ai-assistant",
+    "test:landing-pages": "playwright test --project=landing-pages",
+    "test:nextjs-apps": "playwright test --project=nextjs-internal-tool --project=nextjs_dashboard_app --project=nextjs_crud_app --project=nextjs_workflow_app --project=nextjs_data_explorer --project=nextjs_landing_site --project=agent_runner_ui",
+    "test:mobile": "playwright test --grep=@mobile",
+    "test:ci": "playwright test --reporter=github"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@axe-core/playwright": "^4.10.0",
+    "serve": "^14.2.4"
+  }
+}

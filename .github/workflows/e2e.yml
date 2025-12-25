@@ -1,0 +1,336 @@
+name: E2E Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Specific project to test (leave empty for all)'
+        required: false
+        type: string
+
+env:
+  CI: true
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+
+jobs:
+  install:
+    name: Install Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+  test-nextjs-apps:
+    name: Test Next.js Apps
+    needs: install
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - nextjs-internal-tool
+          - nextjs_crud_app
+          - nextjs_dashboard_app
+          - nextjs_workflow_app
+          - nextjs_data_explorer
+          - nextjs_landing_site
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Playwright browsers (fallback)
+        run: npx playwright install chromium --with-deps
+
+      - name: Install project dependencies
+        working-directory: ${{ matrix.project }}
+        run: npm ci
+        continue-on-error: true
+
+      - name: Build project
+        working-directory: ${{ matrix.project }}
+        run: npm run build
+        continue-on-error: true
+
+      - name: Run E2E tests
+        run: npx playwright test --project=${{ matrix.project }}
+        env:
+          CI: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report-${{ matrix.project }}
+          path: playwright-report/
+          retention-days: 7
+
+      - name: Upload test screenshots
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-screenshots-${{ matrix.project }}
+          path: test-results/
+          retention-days: 7
+
+  test-agent-runner:
+    name: Test Agent Runner UI
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Playwright browsers (fallback)
+        run: npx playwright install chromium --with-deps
+
+      - name: Install project dependencies
+        working-directory: agent_runner_ui
+        run: npm ci
+        continue-on-error: true
+
+      - name: Build project
+        working-directory: agent_runner_ui
+        run: npm run build
+        continue-on-error: true
+
+      - name: Run E2E tests
+        run: npx playwright test --project=agent_runner_ui
+        env:
+          CI: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report-agent-runner
+          path: playwright-report/
+          retention-days: 7
+
+  test-ai-assistant:
+    name: Test AI Assistant
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Playwright browsers (fallback)
+        run: npx playwright install chromium --with-deps
+
+      - name: Install project dependencies
+        working-directory: ai-assistant
+        run: npm ci
+        continue-on-error: true
+
+      - name: Build project
+        working-directory: ai-assistant
+        run: npm run build
+        continue-on-error: true
+
+      - name: Run E2E tests
+        run: npx playwright test --project=ai-assistant
+        env:
+          CI: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report-ai-assistant
+          path: playwright-report/
+          retention-days: 7
+
+  test-landing-pages:
+    name: Test Landing Pages
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Playwright browsers (fallback)
+        run: npx playwright install chromium --with-deps
+
+      - name: Run E2E tests
+        run: npx playwright test --project=landing-pages
+        env:
+          CI: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report-landing-pages
+          path: playwright-report/
+          retention-days: 7
+
+  test-mobile:
+    name: Test Mobile Views
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Playwright browsers (fallback)
+        run: npx playwright install chromium --with-deps
+
+      - name: Run mobile tests
+        run: npx playwright test --grep=@mobile
+        env:
+          CI: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report-mobile
+          path: playwright-report/
+          retention-days: 7
+
+  summary:
+    name: Test Summary
+    needs:
+      - test-nextjs-apps
+      - test-agent-runner
+      - test-ai-assistant
+      - test-landing-pages
+      - test-mobile
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Check test results
+        run: |
+          if [ "${{ needs.test-nextjs-apps.result }}" == "failure" ] || \
+             [ "${{ needs.test-agent-runner.result }}" == "failure" ] || \
+             [ "${{ needs.test-ai-assistant.result }}" == "failure" ] || \
+             [ "${{ needs.test-landing-pages.result }}" == "failure" ] || \
+             [ "${{ needs.test-mobile.result }}" == "failure" ]; then
+            echo "::error::Some E2E tests failed"
+            exit 1
+          fi
+          echo "All E2E tests passed successfully"
+
+  # Manual trigger for specific project
+  test-specific:
+    name: Test Specific Project
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.project != ''
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run specific project tests
+        run: npx playwright test --project=${{ github.event.inputs.project }}
+        env:
+          CI: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report-${{ github.event.inputs.project }}
+          path: playwright-report/
+          retention-days: 7

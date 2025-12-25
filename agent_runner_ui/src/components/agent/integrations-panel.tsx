@@ -146,10 +146,18 @@ export function IntegrationsPanel({
               const isActive = integration.status === 'active'
 
               return (
-                <motion.button
+                <motion.div
                   key={integration.id}
                   onClick={() => isActive && toggleIntegration(integration.id)}
-                  disabled={!isActive}
+                  onKeyDown={(e) => {
+                    if (isActive && (e.key === 'Enter' || e.key === ' ')) {
+                      e.preventDefault()
+                      toggleIntegration(integration.id)
+                    }
+                  }}
+                  role="button"
+                  tabIndex={isActive ? 0 : -1}
+                  aria-disabled={!isActive}
                   whileTap={isActive ? { scale: 0.98 } : undefined}
                   className={cn(
                     'w-full flex items-center gap-3 rounded-lg border p-3 text-left transition-colors',
@@ -195,7 +203,7 @@ export function IntegrationsPanel({
                       onClick={(e) => e.stopPropagation()}
                     />
                   )}
-                </motion.button>
+                </motion.div>
               )
             })
           )}

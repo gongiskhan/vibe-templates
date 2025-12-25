@@ -58,7 +58,7 @@ export function t(
  * Get all translations for a locale
  */
 export function getTranslations(locale: Locale): TranslationKeys {
-  return translations[locale]
+  return translations[locale] as TranslationKeys
 }
 
 /**

@@ -1,0 +1,69 @@
+{
+  "id": "onboarding",
+  "name": "User Onboarding",
+  "description": "Collect basic user information and preferences",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "id": "greeting",
+      "type": "message",
+      "content": "Welcome! I'll help you get started. Let me collect some basic information."
+    },
+    {
+      "id": "name",
+      "type": "question",
+      "content": "What is your name?",
+      "variable": "userName",
+      "validation": {
+        "required": true,
+        "minLength": 2
+      }
+    },
+    {
+      "id": "email",
+      "type": "question",
+      "content": "What is your email address?",
+      "variable": "userEmail",
+      "validation": {
+        "required": true,
+        "pattern": "^[^@]+@[^@]+\\.[^@]+$"
+      }
+    },
+    {
+      "id": "needs",
+      "type": "question",
+      "content": "What are you looking for? Tell me about your needs or goals.",
+      "variable": "userNeeds",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "id": "document",
+      "type": "document_upload",
+      "content": "If you have any relevant documents, please upload them now. This could be an ID, contract, or any supporting document.",
+      "variable": "uploadedDocument",
+      "optional": true,
+      "acceptedTypes": ["image/*", "application/pdf", ".doc", ".docx"]
+    },
+    {
+      "id": "confirmation",
+      "type": "confirmation",
+      "content": "Let me confirm the information you provided:\n\n- **Name**: {{userName}}\n- **Email**: {{userEmail}}\n- **Needs**: {{userNeeds}}\n{{#uploadedDocument}}- **Document**: {{uploadedDocument.filename}}{{/uploadedDocument}}\n\nIs this correct?",
+      "variable": "confirmed",
+      "options": ["Yes, that's correct", "No, I need to make changes"]
+    },
+    {
+      "id": "completion",
+      "type": "message",
+      "content": "Thank you, {{userName}}! Your information has been saved. I'm here to help you with anything else you need."
+    }
+  ],
+  "variables": {
+    "userName": "",
+    "userEmail": "",
+    "userNeeds": "",
+    "uploadedDocument": null,
+    "confirmed": false
+  }
+}
