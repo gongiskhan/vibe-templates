@@ -30,7 +30,8 @@ export class SidebarPage extends BasePage {
    * Navigates to a route by clicking a nav item
    */
   async navigateTo(name: string | RegExp): Promise<void> {
-    await this.getNavItem(name).click()
+    // Use .first() to avoid strict mode violation when mobile menu shows duplicate nav
+    await this.getNavItem(name).first().click()
     await this.page.waitForLoadState('domcontentloaded')
   }
 

@@ -1,33 +1,65 @@
 /**
- * Event/Webinar - Brand Tokens
+ * Campaign Launch - Tech Startup Tokens
  */
 
 :root {
-  /* Brand Colors */
-  --brand-primary: #3b82f6;
-  --brand-primary-light: #60a5fa;
-  --brand-primary-dark: #2563eb;
-  --brand-secondary: #10b981;
-  --brand-accent: #f59e0b;
+  /* Brand Colors - Electric Indigo Theme */
+  --brand-primary: #6366F1;
+  --brand-primary-light: #818CF8;
+  --brand-primary-dark: #4F46E5;
+  --brand-secondary: #06B6D4;
+  --brand-accent: #EC4899;
 
   /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'Inter', sans-serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Outfit', sans-serif;
 
   /* Light Theme */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f0f9ff;
-  --bg-tertiary: #e0f2fe;
-  --text-primary: #0f172a;
-  --text-secondary: #64748b;
-  --border-color: #e2e8f0;
+  --bg-primary: #FAFBFF;
+  --bg-secondary: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --border-color: #E2E8F0;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+  --gradient-accent: linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%);
+  --gradient-vivid: linear-gradient(135deg, #6366F1 0%, #EC4899 50%, #06B6D4 100%);
+  --gradient-mesh:
+    radial-gradient(at 20% 30%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 70%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, rgba(236, 72, 153, 0.08) 0px, transparent 50%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 40px -10px rgba(99, 102, 241, 0.4);
+  --shadow-glow-accent: 0 0 40px -10px rgba(6, 182, 212, 0.4);
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0c1222;
-  --bg-secondary: #1e293b;
-  --bg-tertiary: #334155;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --border-color: #334155;
+  --bg-primary: #0A0A1B;
+  --bg-secondary: #111127;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --border-color: #1E293B;
+
+  /* Brighter colors for dark mode */
+  --brand-primary: #818CF8;
+  --brand-primary-light: #A5B4FC;
+  --brand-primary-dark: #6366F1;
+  --brand-secondary: #22D3EE;
+  --brand-accent: #F472B6;
+
+  --gradient-primary: linear-gradient(135deg, #818CF8 0%, #C084FC 100%);
+  --gradient-accent: linear-gradient(135deg, #22D3EE 0%, #5EEAD4 100%);
+  --gradient-vivid: linear-gradient(135deg, #818CF8 0%, #F472B6 50%, #22D3EE 100%);
+  --gradient-mesh:
+    radial-gradient(at 20% 30%, rgba(129, 140, 248, 0.2) 0px, transparent 50%),
+    radial-gradient(at 80% 70%, rgba(34, 211, 238, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, rgba(244, 114, 182, 0.1) 0px, transparent 50%);
+
+  --shadow-glow: 0 0 50px -12px rgba(129, 140, 248, 0.5);
+  --shadow-glow-accent: 0 0 50px -12px rgba(34, 211, 238, 0.5);
 }

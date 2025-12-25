@@ -27,8 +27,8 @@ export interface BrandConfig {
 export const brandConfig: BrandConfig = {
   name: "Vibe Templates",
   colors: {
-    primary: "6366F1",    // Indigo
-    secondary: "8B5CF6",  // Purple
+    primary: "6366F1",    // Electric Indigo
+    secondary: "EC4899",  // Magenta
     accent: "06B6D4",     // Cyan
     success: "22C55E",    // Green
     warning: "F59E0B",    // Amber

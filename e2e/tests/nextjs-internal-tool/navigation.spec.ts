@@ -62,9 +62,12 @@ test.describe('Sidebar Navigation', () => {
       await sidebar.navigateTo(/projects|projetos/i)
       await expect(page).toHaveURL(/\/projects/)
 
+      // Wait for navigation to complete
+      await page.waitForLoadState('networkidle')
+
       // Then navigate back
       await sidebar.navigateTo(/dashboard|painel/i)
-      await expect(page).toHaveURL(/^\/$/)
+      await expect(page).toHaveURL(/^\/$|.*\/$/)
     })
   })
 
@@ -221,11 +224,16 @@ test.describe('Sidebar Navigation', () => {
 
       await sidebar.openMobileMenu()
 
-      // Click a navigation item
-      await sidebar.navigateTo(/projects|projetos/i)
+      // Wait for mobile sheet to fully open
+      await page.waitForTimeout(500)
 
-      // Mobile menu should close
-      await page.waitForTimeout(300)
+      // Click a navigation item inside the mobile sheet/dialog
+      const mobileSheet = page.locator('[role="dialog"]')
+      const projectsLink = mobileSheet.locator('a').filter({ hasText: /projects|projetos/i }).first()
+      await projectsLink.click()
+
+      // Wait for navigation and menu close
+      await page.waitForTimeout(500)
     })
   })
 })

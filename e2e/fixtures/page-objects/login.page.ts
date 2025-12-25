@@ -20,7 +20,8 @@ export class LoginPage extends BasePage {
     this.emailInput = page.locator('#email')
     this.passwordInput = page.locator('#password')
     this.submitButton = page.locator('button[type="submit"]')
-    this.rememberCheckbox = page.locator('#remember, [name="remember"]')
+    // Radix checkbox uses button role, not native input
+    this.rememberCheckbox = page.locator('#remember, [name="remember"], button#remember, [role="checkbox"]').first()
     this.googleButton = page.getByRole('button', { name: /google/i })
     this.githubButton = page.getByRole('button', { name: /github/i })
     this.forgotPasswordLink = page.getByRole('link', { name: /forgot|esqueceu/i })

@@ -6,8 +6,7 @@ import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   LayoutDashboard,
-  BarChart3,
-  FileBarChart,
+  FolderKanban,
   Activity,
   Settings,
   Puzzle,
@@ -38,14 +37,9 @@ const navItems: NavItem[] = [
     icon: LayoutDashboard,
   },
   {
-    titleKey: "nav.analytics",
-    href: "/analytics",
-    icon: BarChart3,
-  },
-  {
-    titleKey: "nav.reports",
-    href: "/reports",
-    icon: FileBarChart,
+    titleKey: "nav.projects",
+    href: "/projects",
+    icon: FolderKanban,
   },
   {
     titleKey: "nav.activity",
@@ -84,35 +78,40 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
   return (
     <motion.aside
       initial={false}
-      animate={{ width: collapsed ? 64 : 240 }}
-      transition={{ duration: 0.2, ease: "easeInOut" }}
+      animate={{ width: collapsed ? 72 : 256 }}
+      transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
       className={cn(
-        "fixed left-0 top-0 z-40 h-screen border-r bg-sidebar text-sidebar-foreground",
-        "flex flex-col"
+        "fixed left-0 top-0 z-40 h-screen",
+        "bg-sidebar text-sidebar-foreground",
+        "flex flex-col",
+        "border-r border-sidebar-border/50"
       )}
     >
+      {/* Gradient glow effect at top */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[hsl(239_84%_67%/0.5)] to-transparent" />
+
       {/* Logo */}
-      <div className="flex h-14 items-center border-b border-sidebar-border px-3">
-        <Link href="/" className="flex items-center gap-2 overflow-hidden">
+      <div className="flex h-16 items-center border-b border-sidebar-border/30 px-4">
+        <Link href="/" className="flex items-center gap-3 overflow-hidden group">
           <motion.div
             initial={false}
-            animate={{ width: collapsed ? 40 : 160 }}
-            className="relative h-8"
+            animate={{ width: collapsed ? 40 : 180 }}
+            className="relative h-9"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={logoSrc}
               alt={brand.appName}
-              className="h-8 w-auto object-contain object-left"
+              className="h-9 w-auto object-contain object-left transition-transform duration-200 group-hover:scale-105"
             />
           </motion.div>
         </Link>
       </div>
 
       {/* Navigation */}
-      <ScrollArea className="flex-1 py-2">
-        <nav className="space-y-1 px-2">
-          {navItems.map((item) => {
+      <ScrollArea className="flex-1 py-4">
+        <nav className="space-y-1 px-3">
+          {navItems.map((item, index) => {
             const isActive = pathname === item.href
             const Icon = item.icon
             const title = t(locale, item.titleKey)
@@ -122,14 +121,51 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                  "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
-                  isActive &&
-                    "bg-sidebar-accent text-sidebar-accent-foreground",
+                  "group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium",
+                  "transition-all duration-200",
+                  isActive
+                    ? "text-sidebar-accent-foreground"
+                    : "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-muted/50",
                   collapsed && "justify-center px-2"
                 )}
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                }}
               >
-                <Icon className="h-5 w-5 shrink-0" />
+                {/* Active state gradient background */}
+                {isActive && (
+                  <motion.div
+                    layoutId="activeNav"
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-[hsl(239_84%_67%)] to-[hsl(280_75%_60%)]"
+                    initial={false}
+                    transition={{
+                      type: "spring",
+                      stiffness: 350,
+                      damping: 30,
+                    }}
+                  />
+                )}
+
+                {/* Hover glow effect */}
+                <div
+                  className={cn(
+                    "absolute inset-0 rounded-xl opacity-0 transition-opacity duration-200",
+                    "bg-gradient-to-r from-[hsl(239_84%_67%/0.1)] to-[hsl(188_94%_43%/0.1)]",
+                    !isActive && "group-hover:opacity-100"
+                  )}
+                />
+
+                {/* Icon with glow on active */}
+                <div className="relative z-10">
+                  <Icon
+                    className={cn(
+                      "h-5 w-5 shrink-0 transition-all duration-200",
+                      isActive && "drop-shadow-[0_0_8px_hsl(239_84%_67%/0.5)]"
+                    )}
+                  />
+                </div>
+
+                {/* Label */}
                 <AnimatePresence mode="wait">
                   {!collapsed && (
                     <motion.span
@@ -137,12 +173,22 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
                       animate={{ opacity: 1, width: "auto" }}
                       exit={{ opacity: 0, width: 0 }}
                       transition={{ duration: 0.15 }}
-                      className="truncate"
+                      className="relative z-10 truncate"
                     >
                       {title}
                     </motion.span>
                   )}
                 </AnimatePresence>
+
+                {/* Active indicator dot for collapsed state */}
+                {isActive && collapsed && (
+                  <motion.div
+                    className="absolute -right-1 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-white shadow-[0_0_8px_hsl(239_84%_67%)]"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  />
+                )}
               </Link>
             )
 
@@ -150,7 +196,11 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
               return (
                 <Tooltip key={item.href} delayDuration={0}>
                   <TooltipTrigger asChild>{navLink}</TooltipTrigger>
-                  <TooltipContent side="right" sideOffset={10}>
+                  <TooltipContent
+                    side="right"
+                    sideOffset={12}
+                    className="bg-sidebar text-sidebar-foreground border-sidebar-border/50 shadow-xl"
+                  >
                     {title}
                   </TooltipContent>
                 </Tooltip>
@@ -163,25 +213,42 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
       </ScrollArea>
 
       {/* Collapse Button */}
-      <div className="border-t border-sidebar-border p-2">
+      <div className="border-t border-sidebar-border/30 p-3">
         <Button
           variant="ghost"
           size="sm"
           onClick={() => onCollapsedChange(!collapsed)}
           className={cn(
-            "w-full justify-center text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+            "w-full justify-center",
+            "text-sidebar-foreground/70 hover:text-sidebar-foreground",
+            "hover:bg-sidebar-muted/50",
+            "transition-all duration-200"
           )}
         >
-          {collapsed ? (
+          <motion.div
+            animate={{ rotate: collapsed ? 0 : 180 }}
+            transition={{ duration: 0.2 }}
+          >
             <ChevronRight className="h-4 w-4" />
-          ) : (
-            <>
-              <ChevronLeft className="h-4 w-4 mr-2" />
-              <span>{t(locale, "nav.collapse")}</span>
-            </>
-          )}
+          </motion.div>
+          <AnimatePresence mode="wait">
+            {!collapsed && (
+              <motion.span
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: "auto" }}
+                exit={{ opacity: 0, width: 0 }}
+                transition={{ duration: 0.15 }}
+                className="ml-2"
+              >
+                {t(locale, "nav.collapse")}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </Button>
       </div>
+
+      {/* Bottom gradient glow */}
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[hsl(188_94%_43%/0.3)] to-transparent" />
     </motion.aside>
   )
 }
