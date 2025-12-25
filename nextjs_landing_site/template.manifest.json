@@ -1,0 +1,77 @@
+{
+  "template_id": "nextjs_landing_site",
+  "name": "Next.js Landing Site",
+  "type": "landing_page",
+  "version": "1.0.0",
+  "description": "A modern public-facing landing site with hero sections, features showcase, pricing, and CTA flows",
+  "stack": [
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "shadcn-ui",
+    "framer-motion",
+    "lucide-react"
+  ],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "outputs": ["url"],
+  "branding": {
+    "tokensPath": "src/brand/tokens.css",
+    "configPath": "src/brand/brand.config.ts",
+    "logoDir": "public/brand"
+  },
+  "localization": {
+    "defaultLocale": "pt",
+    "supportedLocales": ["pt", "en"],
+    "translationsPath": "src/i18n"
+  },
+  "exposed_routes": [
+    {
+      "route": "/",
+      "name": "Home",
+      "description": "Hero section with value proposition and CTAs"
+    },
+    {
+      "route": "/features",
+      "name": "Features",
+      "description": "Product features showcase"
+    },
+    {
+      "route": "/pricing",
+      "name": "Pricing",
+      "description": "Pricing tiers and comparison"
+    },
+    {
+      "route": "/contact",
+      "name": "Contact",
+      "description": "Contact form and information"
+    }
+  ],
+  "features": {
+    "responsive": true,
+    "darkMode": true,
+    "animations": true,
+    "localization": true,
+    "heroSection": true,
+    "featureShowcase": true,
+    "pricingTable": true,
+    "testimonials": true,
+    "ctaFlows": true,
+    "contactForm": true
+  },
+  "directories": {
+    "components": "src/components",
+    "pages": "src/app",
+    "hooks": "src/hooks",
+    "utilities": "src/lib",
+    "brand": "src/brand",
+    "i18n": "src/i18n",
+    "publicAssets": "public"
+  },
+  "notes": "Public-facing landing site template with modern design, motion accents, and conversion-focused sections. Uses a public navigation layout instead of sidebar."
+}

@@ -1,0 +1,86 @@
+{
+  "template_id": "nextjs_data_explorer",
+  "name": "Next.js Data Explorer",
+  "type": "web_app",
+  "version": "1.0.0",
+  "description": "A data exploration template with query builder UI, results grid, filter chips, saved queries, and chart previews",
+  "stack": [
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "shadcn-ui",
+    "framer-motion",
+    "recharts",
+    "lucide-react"
+  ],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "outputs": ["url"],
+  "branding": {
+    "tokensPath": "src/brand/tokens.css",
+    "configPath": "src/brand/brand.config.ts",
+    "logoDir": "public/brand"
+  },
+  "localization": {
+    "defaultLocale": "pt",
+    "supportedLocales": ["pt", "en"],
+    "translationsPath": "src/i18n"
+  },
+  "exposed_routes": [
+    {
+      "route": "/",
+      "name": "Explorer",
+      "description": "Main data exploration interface"
+    },
+    {
+      "route": "/queries",
+      "name": "Saved Queries",
+      "description": "Library of saved and shared queries"
+    },
+    {
+      "route": "/history",
+      "name": "Query History",
+      "description": "Recent queries and results"
+    },
+    {
+      "route": "/settings",
+      "name": "Settings",
+      "description": "Explorer preferences and data sources"
+    },
+    {
+      "route": "/playground",
+      "name": "Playground",
+      "description": "Component showcase"
+    }
+  ],
+  "features": {
+    "responsive": true,
+    "darkMode": true,
+    "commandPalette": true,
+    "collapsibleSidebar": true,
+    "toasts": true,
+    "mockData": true,
+    "localization": true,
+    "queryBuilder": true,
+    "resultsGrid": true,
+    "filterChips": true,
+    "savedQueries": true,
+    "chartPreview": true,
+    "dangerZoneWarning": true
+  },
+  "directories": {
+    "components": "src/components",
+    "pages": "src/app",
+    "hooks": "src/hooks",
+    "utilities": "src/lib",
+    "brand": "src/brand",
+    "i18n": "src/i18n",
+    "publicAssets": "public"
+  },
+  "notes": "Data exploration template with SQL-like query builder, interactive results grid, and data visualization. Ideal for business intelligence tools and data analysis platforms."
+}

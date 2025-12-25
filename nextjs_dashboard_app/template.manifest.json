@@ -1,0 +1,90 @@
+{
+  "template_id": "nextjs_dashboard_app",
+  "name": "Next.js Dashboard App",
+  "type": "web_app",
+  "version": "1.0.0",
+  "description": "A dashboard-first application with KPI cards, charts, filters, insights panels, data freshness badges, saved views, and export actions",
+  "stack": [
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "shadcn-ui",
+    "framer-motion",
+    "recharts",
+    "lucide-react"
+  ],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "outputs": ["url"],
+  "branding": {
+    "tokensPath": "src/brand/tokens.css",
+    "configPath": "src/brand/brand.config.ts",
+    "logoDir": "public/brand",
+    "description": "All brand customization is centralized. Edit tokens.css for colors/typography, brand.config.ts for metadata, and replace logos in public/brand/"
+  },
+  "localization": {
+    "defaultLocale": "pt",
+    "supportedLocales": ["pt", "en"],
+    "translationsPath": "src/i18n"
+  },
+  "exposed_routes": [
+    {
+      "route": "/",
+      "name": "Dashboard",
+      "description": "Main dashboard with KPIs, charts, filters, and insights"
+    },
+    {
+      "route": "/analytics",
+      "name": "Analytics",
+      "description": "Deep dive analytics with advanced charts and drill-down"
+    },
+    {
+      "route": "/reports",
+      "name": "Reports",
+      "description": "Saved views and report generation"
+    },
+    {
+      "route": "/activity",
+      "name": "Activity Feed",
+      "description": "Real-time activity and audit trail"
+    },
+    {
+      "route": "/settings",
+      "name": "Settings",
+      "description": "Dashboard preferences and configuration"
+    },
+    {
+      "route": "/playground",
+      "name": "Playground",
+      "description": "Component showcase and documentation"
+    }
+  ],
+  "features": {
+    "responsive": true,
+    "darkMode": true,
+    "commandPalette": true,
+    "collapsibleSidebar": true,
+    "toasts": true,
+    "mockData": true,
+    "localization": true,
+    "dataFreshness": true,
+    "savedViews": true,
+    "exportActions": true,
+    "insightsPanel": true
+  },
+  "directories": {
+    "components": "src/components",
+    "pages": "src/app",
+    "hooks": "src/hooks",
+    "utilities": "src/lib",
+    "brand": "src/brand",
+    "i18n": "src/i18n",
+    "publicAssets": "public"
+  },
+  "notes": "Dashboard-focused template with advanced data visualization, filtering, and export capabilities. Ideal for analytics platforms, business intelligence tools, and monitoring dashboards."
+}

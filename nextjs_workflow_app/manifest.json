@@ -1,0 +1,102 @@
+{
+  "id": "nextjs_workflow_app",
+  "name": "Next.js Workflow App",
+  "description": "Template para aplicações de workflow e aprovações com multi-step processes, timeline de status e sistema de comentários",
+  "version": "1.0.0",
+  "category": "web-app",
+  "framework": "next.js",
+  "features": [
+    "Multi-step workflow stepper",
+    "Approval workflow system",
+    "Status timeline/history",
+    "Comment threads with replies",
+    "Dashboard with KPIs",
+    "Project management",
+    "Activity tracking",
+    "Branding system (light/dark)",
+    "Localization (PT/EN)"
+  ],
+  "tech_stack": {
+    "framework": "Next.js 15",
+    "ui": "shadcn/ui",
+    "styling": "Tailwind CSS v4",
+    "animations": "Framer Motion",
+    "charts": "Recharts",
+    "icons": "Lucide React",
+    "language": "TypeScript"
+  },
+  "branding": {
+    "tokens": "src/brand/tokens.css",
+    "config": "src/brand/brand.config.ts",
+    "assets": "public/brand/",
+    "provider": "src/brand/brand-provider.tsx"
+  },
+  "i18n": {
+    "default": "pt",
+    "supported": ["pt", "en"],
+    "files": "src/i18n/"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "name": "Dashboard",
+      "description": "Visão geral com KPIs e atividade recente"
+    },
+    {
+      "path": "/projects",
+      "name": "Projetos",
+      "description": "Lista e gerenciamento de projetos"
+    },
+    {
+      "path": "/approvals",
+      "name": "Aprovações",
+      "description": "Lista de aprovações pendentes com filtros"
+    },
+    {
+      "path": "/approvals/[id]",
+      "name": "Detalhes da Aprovação",
+      "description": "Stepper, timeline, comentários e ações"
+    },
+    {
+      "path": "/activity",
+      "name": "Atividade",
+      "description": "Histórico de ações e eventos"
+    },
+    {
+      "path": "/settings",
+      "name": "Configurações",
+      "description": "Preferências do usuário"
+    },
+    {
+      "path": "/playground",
+      "name": "Playground",
+      "description": "Demonstração de componentes"
+    }
+  ],
+  "components": {
+    "workflow": [
+      "workflow-stepper",
+      "approval-card",
+      "status-timeline",
+      "comment-thread"
+    ],
+    "dashboard": [
+      "kpi-card",
+      "activity-chart",
+      "recent-activity",
+      "quick-actions"
+    ],
+    "layout": [
+      "app-shell",
+      "sidebar",
+      "header",
+      "command-palette"
+    ]
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}

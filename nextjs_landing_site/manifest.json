@@ -1,0 +1,64 @@
+{
+  "id": "nextjs_landing_site",
+  "name": "Next.js Landing Site",
+  "description": "Template para sites institucionais e landing pages com hero, features, pricing e footer",
+  "version": "1.0.0",
+  "category": "web-app",
+  "framework": "next.js",
+  "features": [
+    "Responsive navbar with mobile menu",
+    "Animated hero section",
+    "Features grid with icons",
+    "Pricing table with toggle",
+    "Footer with newsletter signup",
+    "Theme switching (light/dark)",
+    "Localization (PT/EN)",
+    "SEO-friendly structure"
+  ],
+  "tech_stack": {
+    "framework": "Next.js 15",
+    "ui": "shadcn/ui",
+    "styling": "Tailwind CSS v4",
+    "animations": "Framer Motion",
+    "icons": "Lucide React",
+    "language": "TypeScript"
+  },
+  "branding": {
+    "tokens": "src/brand/tokens.css",
+    "config": "src/brand/brand.config.ts",
+    "assets": "public/brand/",
+    "provider": "src/brand/brand-provider.tsx"
+  },
+  "i18n": {
+    "default": "pt",
+    "supported": ["pt", "en"],
+    "files": "src/i18n/"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "name": "Landing Page",
+      "description": "Hero, Features, Pricing sections"
+    },
+    {
+      "path": "/login",
+      "name": "Login",
+      "description": "Página de autenticação"
+    }
+  ],
+  "components": {
+    "landing": [
+      "navbar",
+      "hero",
+      "features",
+      "pricing",
+      "footer"
+    ]
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}

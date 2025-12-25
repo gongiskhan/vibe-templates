@@ -1,0 +1,95 @@
+/**
+ * Portuguese translations for Agent Runner
+ */
+export const pt = {
+  common: {
+    run: "Executar",
+    cancel: "Cancelar",
+    loading: "Carregando...",
+    running: "Executando...",
+    upload: "Enviar",
+    remove: "Remover",
+    add: "Adicionar",
+    save: "Salvar",
+    clear: "Limpar",
+  },
+  header: {
+    title: "Executor de Agentes",
+    subtitle: "Execute agentes sob demanda",
+    mockMode: "Modo Simulação",
+  },
+  agent: {
+    selectTitle: "Selecionar Agente",
+    selectDescription: "Escolha um agente para executar sua tarefa",
+    placeholder: "Selecione um agente...",
+    noAgents: "Nenhum agente disponível",
+    allowed: "Permitidos",
+    integrations: "integrações",
+  },
+  instructions: {
+    title: "Instruções",
+    description: "Descreva o que você quer que o agente faça",
+    placeholder: "Digite instruções detalhadas para o agente...",
+    hint: "Seja específico sobre o resultado desejado e quaisquer restrições",
+  },
+  inputs: {
+    title: "Entradas",
+    description: "Forneça contexto adicional para o agente",
+    files: {
+      title: "Arquivos",
+      upload: "Clique para enviar",
+      dragDrop: "ou arraste e solte",
+      types: "PDF, DOC, TXT até 10MB",
+      uploaded: "arquivo(s) enviado(s)",
+    },
+    links: {
+      title: "Links",
+      placeholder: "https://exemplo.com",
+      add: "Adicionar Link",
+    },
+    notes: {
+      title: "Notas",
+      placeholder: "Notas ou contexto adicional...",
+    },
+  },
+  integrations: {
+    title: "Integrações",
+    description: "Ative integrações para o agente usar",
+    noIntegrations: "Nenhuma integração configurada",
+    connected: "Conectado",
+    available: "Disponível",
+    notAvailable: "Não disponível",
+  },
+  output: {
+    title: "Saída",
+    description: "Resultado da execução e artefatos",
+    empty: "Nenhuma execução iniciada",
+    emptyHint: "Configure e execute um agente para ver a saída",
+    streaming: "Recebendo dados...",
+    completed: "Concluído",
+    failed: "Falhou",
+    progress: "Progresso",
+    result: "Resultado",
+    artifacts: "Artefatos",
+    downloadAll: "Baixar Todos",
+    log: "Log",
+  },
+  history: {
+    title: "Histórico",
+    description: "Execuções anteriores deste agente",
+    noHistory: "Nenhum histórico disponível",
+    ago: "atrás",
+    status: {
+      completed: "Concluído",
+      failed: "Falhou",
+      running: "Executando",
+      pending: "Pendente",
+    },
+  },
+  errors: {
+    agentRequired: "Selecione um agente",
+    instructionsRequired: "Digite instruções",
+    runFailed: "Falha ao iniciar execução",
+    connectionError: "Erro de conexão",
+  },
+} as const

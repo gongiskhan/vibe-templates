@@ -1,0 +1,65 @@
+{
+  "id": "agent_runner_ui",
+  "name": "Agent Runner UI",
+  "description": "Interface para executar agentes sob demanda com streaming de output e histórico",
+  "version": "1.0.0",
+  "category": "web-app",
+  "framework": "next.js",
+  "features": [
+    "Agent selection picker",
+    "Instructions input with context",
+    "File upload support",
+    "Links and notes input",
+    "Integrations toggle",
+    "Real-time streaming output",
+    "Run history tracking",
+    "Progress indicators",
+    "Branding system (light/dark)",
+    "Localization (PT/EN)"
+  ],
+  "tech_stack": {
+    "framework": "Next.js 15",
+    "ui": "shadcn/ui",
+    "styling": "Tailwind CSS v4",
+    "animations": "Framer Motion",
+    "icons": "Lucide React",
+    "language": "TypeScript"
+  },
+  "branding": {
+    "tokens": "src/brand/tokens.css",
+    "config": "src/brand/brand.config.ts",
+    "assets": "public/brand/",
+    "provider": "src/brand/brand-provider.tsx"
+  },
+  "i18n": {
+    "default": "pt",
+    "supported": ["pt", "en"],
+    "files": "src/i18n/"
+  },
+  "api_integration": {
+    "service": "../services/agents-api",
+    "endpoints": {
+      "agents": "GET /agents",
+      "integrations": "GET /integrations",
+      "runs": "POST /runs",
+      "run_status": "GET /runs/:id",
+      "run_stream": "GET /runs/:id/stream"
+    }
+  },
+  "components": {
+    "agent": [
+      "agent-picker",
+      "integrations-panel",
+      "file-upload",
+      "links-input",
+      "streaming-output",
+      "run-history"
+    ]
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}

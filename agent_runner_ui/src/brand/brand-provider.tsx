@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { brandConfig, type BrandConfig } from './brand.config'
+import type { Locale } from '@/i18n'
 
 type Theme = 'light' | 'dark' | 'system'
 
@@ -10,6 +11,8 @@ interface BrandContextType {
   theme: Theme
   setTheme: (theme: Theme) => void
   resolvedTheme: 'light' | 'dark'
+  locale: Locale
+  setLocale: (locale: Locale) => void
 }
 
 const BrandContext = createContext<BrandContextType | undefined>(undefined)
@@ -17,13 +20,24 @@ const BrandContext = createContext<BrandContextType | undefined>(undefined)
 export function BrandProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('system')
   const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light')
+  const [locale, setLocaleState] = useState<Locale>('pt')
 
+  // Load saved preferences
   useEffect(() => {
-    const stored = localStorage.getItem('theme') as Theme | null
-    if (stored) {
-      setTheme(stored)
+    const storedTheme = localStorage.getItem('theme') as Theme | null
+    const storedLocale = localStorage.getItem('locale') as Locale | null
+    if (storedTheme) {
+      setTheme(storedTheme)
+    }
+    if (storedLocale) {
+      setLocaleState(storedLocale)
     }
   }, [])
+
+  const setLocale = (newLocale: Locale) => {
+    setLocaleState(newLocale)
+    localStorage.setItem('locale', newLocale)
+  }
 
   useEffect(() => {
     const root = document.documentElement
@@ -53,6 +67,8 @@ export function BrandProvider({ children }: { children: React.ReactNode }) {
         theme,
         setTheme,
         resolvedTheme,
+        locale,
+        setLocale,
       }}
     >
       {children}

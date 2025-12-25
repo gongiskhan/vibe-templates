@@ -1,0 +1,93 @@
+{
+  "id": "nextjs_data_explorer",
+  "name": "Next.js Data Explorer",
+  "description": "Template para exploração e consulta de dados com query builder visual, grid de resultados e exportação",
+  "version": "1.0.0",
+  "category": "web-app",
+  "framework": "next.js",
+  "features": [
+    "Visual query builder",
+    "Results grid with sorting/pagination",
+    "Active filter chips",
+    "Saved queries with favorites",
+    "Multi-format export (CSV, Excel, JSON)",
+    "Row selection and bulk actions",
+    "Dashboard with KPIs",
+    "Branding system (light/dark)",
+    "Localization (PT/EN)"
+  ],
+  "tech_stack": {
+    "framework": "Next.js 15",
+    "ui": "shadcn/ui",
+    "styling": "Tailwind CSS v4",
+    "animations": "Framer Motion",
+    "charts": "Recharts",
+    "icons": "Lucide React",
+    "language": "TypeScript"
+  },
+  "branding": {
+    "tokens": "src/brand/tokens.css",
+    "config": "src/brand/brand.config.ts",
+    "assets": "public/brand/",
+    "provider": "src/brand/brand-provider.tsx"
+  },
+  "i18n": {
+    "default": "pt",
+    "supported": ["pt", "en"],
+    "files": "src/i18n/"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "name": "Dashboard",
+      "description": "Visão geral com KPIs e atividade"
+    },
+    {
+      "path": "/explore",
+      "name": "Explorador",
+      "description": "Query builder e grid de resultados"
+    },
+    {
+      "path": "/projects",
+      "name": "Projetos",
+      "description": "Lista de projetos"
+    },
+    {
+      "path": "/activity",
+      "name": "Atividade",
+      "description": "Histórico de ações"
+    },
+    {
+      "path": "/settings",
+      "name": "Configurações",
+      "description": "Preferências do usuário"
+    }
+  ],
+  "components": {
+    "explorer": [
+      "query-builder",
+      "results-grid",
+      "filter-chips",
+      "saved-queries",
+      "export-menu"
+    ],
+    "dashboard": [
+      "kpi-card",
+      "activity-chart",
+      "recent-activity",
+      "quick-actions"
+    ],
+    "layout": [
+      "app-shell",
+      "sidebar",
+      "header",
+      "command-palette"
+    ]
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}

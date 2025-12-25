@@ -1,0 +1,95 @@
+/**
+ * English translations for Agent Runner
+ */
+export const en = {
+  common: {
+    run: "Run",
+    cancel: "Cancel",
+    loading: "Loading...",
+    running: "Running...",
+    upload: "Upload",
+    remove: "Remove",
+    add: "Add",
+    save: "Save",
+    clear: "Clear",
+  },
+  header: {
+    title: "Agent Runner",
+    subtitle: "Run agents on demand",
+    mockMode: "Mock Mode",
+  },
+  agent: {
+    selectTitle: "Select Agent",
+    selectDescription: "Choose an agent to run your task",
+    placeholder: "Select an agent...",
+    noAgents: "No agents available",
+    allowed: "Allowed",
+    integrations: "integrations",
+  },
+  instructions: {
+    title: "Instructions",
+    description: "Describe what you want the agent to do",
+    placeholder: "Enter detailed instructions for the agent...",
+    hint: "Be specific about the desired output and any constraints",
+  },
+  inputs: {
+    title: "Inputs",
+    description: "Provide additional context for the agent",
+    files: {
+      title: "Files",
+      upload: "Click to upload",
+      dragDrop: "or drag and drop",
+      types: "PDF, DOC, TXT up to 10MB",
+      uploaded: "file(s) uploaded",
+    },
+    links: {
+      title: "Links",
+      placeholder: "https://example.com",
+      add: "Add Link",
+    },
+    notes: {
+      title: "Notes",
+      placeholder: "Additional notes or context...",
+    },
+  },
+  integrations: {
+    title: "Integrations",
+    description: "Enable integrations for the agent to use",
+    noIntegrations: "No integrations configured",
+    connected: "Connected",
+    available: "Available",
+    notAvailable: "Not available",
+  },
+  output: {
+    title: "Output",
+    description: "Agent execution output and artifacts",
+    empty: "No run started",
+    emptyHint: "Configure and run an agent to see output",
+    streaming: "Receiving data...",
+    completed: "Completed",
+    failed: "Failed",
+    progress: "Progress",
+    result: "Result",
+    artifacts: "Artifacts",
+    downloadAll: "Download All",
+    log: "Log",
+  },
+  history: {
+    title: "History",
+    description: "Previous runs for this agent",
+    noHistory: "No history available",
+    ago: "ago",
+    status: {
+      completed: "Completed",
+      failed: "Failed",
+      running: "Running",
+      pending: "Pending",
+    },
+  },
+  errors: {
+    agentRequired: "Select an agent",
+    instructionsRequired: "Enter instructions",
+    runFailed: "Failed to start run",
+    connectionError: "Connection error",
+  },
+} as const

@@ -1,0 +1,90 @@
+{
+  "template_id": "nextjs_crud_app",
+  "name": "Next.js CRUD App",
+  "type": "web_app",
+  "version": "1.0.0",
+  "description": "A complete CRUD application template with entity management, forms, validation, table sorting/filtering, bulk actions, and details drawer",
+  "stack": [
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "shadcn-ui",
+    "framer-motion",
+    "lucide-react"
+  ],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "outputs": ["url"],
+  "branding": {
+    "tokensPath": "src/brand/tokens.css",
+    "configPath": "src/brand/brand.config.ts",
+    "logoDir": "public/brand",
+    "description": "All brand customization is centralized. Edit tokens.css for colors/typography, brand.config.ts for metadata, and replace logos in public/brand/"
+  },
+  "localization": {
+    "defaultLocale": "pt",
+    "supportedLocales": ["pt", "en"],
+    "translationsPath": "src/i18n"
+  },
+  "exposed_routes": [
+    {
+      "route": "/",
+      "name": "Dashboard",
+      "description": "Overview with entity counts and recent activity"
+    },
+    {
+      "route": "/entities",
+      "name": "Entities",
+      "description": "Entity list with CRUD operations, sorting, filtering"
+    },
+    {
+      "route": "/entities/new",
+      "name": "Create Entity",
+      "description": "Form to create new entity with validation"
+    },
+    {
+      "route": "/entities/[id]",
+      "name": "Entity Details",
+      "description": "View and edit entity details with tabs"
+    },
+    {
+      "route": "/settings",
+      "name": "Settings",
+      "description": "Application settings"
+    },
+    {
+      "route": "/playground",
+      "name": "Playground",
+      "description": "Component showcase"
+    }
+  ],
+  "features": {
+    "responsive": true,
+    "darkMode": true,
+    "commandPalette": true,
+    "collapsibleSidebar": true,
+    "toasts": true,
+    "mockData": true,
+    "localization": true,
+    "formValidation": true,
+    "bulkActions": true,
+    "tableFiltering": true,
+    "detailsDrawer": true,
+    "emptyStates": true
+  },
+  "directories": {
+    "components": "src/components",
+    "pages": "src/app",
+    "hooks": "src/hooks",
+    "utilities": "src/lib",
+    "brand": "src/brand",
+    "i18n": "src/i18n",
+    "publicAssets": "public"
+  },
+  "notes": "CRUD-focused template with complete entity management. Includes forms with validation, table with sorting and filtering, bulk actions, and a details drawer with tabs. Ideal for admin panels and data management applications."
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "./templates.schema.json",
+  "name": "Vibe Templates",
+  "version": "1.0.0",
+  "description": "Coleção de templates prontos para desenvolvimento rápido de aplicações",
+  "repository": "https://github.com/gongiskhan/vibe-templates",
+  "templates": [
+    {
+      "id": "nextjs-internal-tool",
+      "name": "Next.js Internal Tool",
+      "path": "./nextjs-internal-tool",
+      "category": "web-app",
+      "description": "Template base para ferramentas internas com dashboard, projetos e configurações"
+    },
+    {
+      "id": "nextjs_dashboard_app",
+      "name": "Next.js Dashboard App",
+      "path": "./nextjs_dashboard_app",
+      "category": "web-app",
+      "description": "Dashboard analítico com gráficos, KPIs, relatórios e insights"
+    },
+    {
+      "id": "nextjs_crud_app",
+      "name": "Next.js CRUD App",
+      "path": "./nextjs_crud_app",
+      "category": "web-app",
+      "description": "Aplicação CRUD com tabelas, formulários e gerenciamento de entidades"
+    },
+    {
+      "id": "nextjs_workflow_app",
+      "name": "Next.js Workflow App",
+      "path": "./nextjs_workflow_app",
+      "category": "web-app",
+      "description": "Fluxos de trabalho com stepper, aprovações, timeline e comentários"
+    },
+    {
+      "id": "nextjs_data_explorer",
+      "name": "Next.js Data Explorer",
+      "path": "./nextjs_data_explorer",
+      "category": "web-app",
+      "description": "Explorador de dados com query builder, grid de resultados e exportação"
+    },
+    {
+      "id": "nextjs_landing_site",
+      "name": "Next.js Landing Site",
+      "path": "./nextjs_landing_site",
+      "category": "web-app",
+      "description": "Site institucional com hero, features, pricing e footer"
+    },
+    {
+      "id": "agent_runner_ui",
+      "name": "Agent Runner UI",
+      "path": "./agent_runner_ui",
+      "category": "web-app",
+      "description": "Interface para executar agentes com streaming de output"
+    }
+  ],
+  "services": [
+    {
+      "id": "agents-api",
+      "name": "Agents API",
+      "path": "./services/agents-api",
+      "category": "api",
+      "description": "API Node.js/TypeScript para executar agentes sob demanda"
+    }
+  ],
+  "shared": [
+    {
+      "id": "brand",
+      "name": "Branding Reference",
+      "path": "./shared/brand",
+      "description": "Documentação e referências do sistema de branding"
+    }
+  ],
+  "features": {
+    "branding": {
+      "description": "Sistema de branding rebrandável via tokens CSS e config",
+      "documentation": "./shared/brand/BRANDING_CONTRACT.md"
+    },
+    "i18n": {
+      "description": "Suporte a internacionalização com Português (padrão) e Inglês",
+      "default_locale": "pt",
+      "supported_locales": ["pt", "en"]
+    },
+    "theming": {
+      "description": "Suporte a temas claro e escuro via CSS variables",
+      "modes": ["light", "dark", "system"]
+    }
+  },
+  "tech_stack": {
+    "framework": "Next.js 15",
+    "language": "TypeScript",
+    "ui": "shadcn/ui",
+    "styling": "Tailwind CSS v4",
+    "animations": "Framer Motion",
+    "charts": "Recharts",
+    "icons": "Lucide React"
+  }
+}
