@@ -1,0 +1,32 @@
+/**
+ * Product Story - Brand Tokens
+ */
+
+:root {
+  /* Brand Colors */
+  --brand-primary: #6366f1;
+  --brand-primary-light: #818cf8;
+  --brand-primary-dark: #4f46e5;
+  --brand-secondary: #ec4899;
+  --brand-accent: #14b8a6;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f3ff;
+  --bg-tertiary: #ede9fe;
+  --text-primary: #1e1b4b;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f0a1f;
+  --bg-secondary: #1e1b4b;
+  --bg-tertiary: #312e81;
+  --text-primary: #f5f3ff;
+  --text-secondary: #a5b4fc;
+  --border-color: #4f46e5;
+}

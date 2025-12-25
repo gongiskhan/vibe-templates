@@ -1,0 +1,11 @@
+{
+  "name": "campaign-launch-landing",
+  "version": "1.0.0",
+  "description": "Campaign launch landing page template",
+  "scripts": {
+    "dev": "npx serve src -p 3001"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

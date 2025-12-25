@@ -1,0 +1,36 @@
+/**
+ * Campaign Launch - Brand Tokens
+ */
+
+:root {
+  /* Brand Colors */
+  --brand-primary: #8b5cf6;
+  --brand-primary-light: #a78bfa;
+  --brand-primary-dark: #7c3aed;
+  --brand-secondary: #f97316;
+  --brand-accent: #06b6d4;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Inter', sans-serif;
+
+  /* Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #faf5ff;
+  --text-primary: #1e1b4b;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f0d1a;
+  --bg-secondary: #1e1b2e;
+  --text-primary: #f5f3ff;
+  --text-secondary: #a5b4fc;
+  --border-color: #374151;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-hero {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+}

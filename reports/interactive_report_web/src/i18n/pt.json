@@ -1,0 +1,67 @@
+{
+  "report": {
+    "title": "Relatório de Vendas",
+    "subtitle": "Análise detalhada do período selecionado",
+    "generatedAt": "Gerado em"
+  },
+  "filters": {
+    "dateRange": "Período",
+    "startDate": "Data Inicial",
+    "endDate": "Data Final",
+    "category": "Categoria",
+    "status": "Status",
+    "all": "Todos",
+    "apply": "Aplicar Filtros",
+    "reset": "Limpar"
+  },
+  "actions": {
+    "export": "Exportar",
+    "exportPDF": "Exportar PDF",
+    "exportCSV": "Exportar CSV",
+    "print": "Imprimir",
+    "refresh": "Atualizar"
+  },
+  "kpis": {
+    "totalRevenue": "Receita Total",
+    "totalOrders": "Total de Pedidos",
+    "averageTicket": "Ticket Médio",
+    "conversionRate": "Taxa de Conversão",
+    "vsLastPeriod": "vs período anterior"
+  },
+  "charts": {
+    "revenueByMonth": "Receita por Mês",
+    "salesByCategory": "Vendas por Categoria",
+    "topProducts": "Produtos Mais Vendidos",
+    "orderStatus": "Status dos Pedidos"
+  },
+  "table": {
+    "title": "Detalhamento de Vendas",
+    "columns": {
+      "id": "ID",
+      "date": "Data",
+      "customer": "Cliente",
+      "product": "Produto",
+      "category": "Categoria",
+      "quantity": "Qtd",
+      "value": "Valor",
+      "status": "Status"
+    },
+    "noData": "Nenhum dado encontrado",
+    "showMore": "Ver Mais"
+  },
+  "status": {
+    "completed": "Concluído",
+    "pending": "Pendente",
+    "cancelled": "Cancelado"
+  },
+  "modal": {
+    "title": "Detalhes do Pedido",
+    "close": "Fechar"
+  },
+  "categories": {
+    "electronics": "Eletrônicos",
+    "furniture": "Móveis",
+    "clothing": "Vestuário",
+    "accessories": "Acessórios"
+  }
+}

@@ -1,0 +1,32 @@
+/**
+ * Recruitment Brand - Brand Tokens
+ */
+
+:root {
+  /* Brand Colors */
+  --brand-primary: #059669;
+  --brand-primary-light: #10b981;
+  --brand-primary-dark: #047857;
+  --brand-secondary: #8b5cf6;
+  --brand-accent: #f59e0b;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #ecfdf5;
+  --bg-tertiary: #d1fae5;
+  --text-primary: #064e3b;
+  --text-secondary: #6b7280;
+  --border-color: #d1d5db;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a1f1a;
+  --bg-secondary: #134e3a;
+  --bg-tertiary: #1f5c48;
+  --text-primary: #ecfdf5;
+  --text-secondary: #a7f3d0;
+  --border-color: #065f46;
+}

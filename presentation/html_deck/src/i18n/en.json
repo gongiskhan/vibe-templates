@@ -1,0 +1,60 @@
+{
+  "ui": {
+    "navHint": "← → to navigate | F fullscreen | T theme | L language",
+    "slideOf": "of"
+  },
+  "deck": {
+    "title": "Presentation Title",
+    "subtitle": "Subtitle or description",
+    "author": "Your Name",
+    "date": "December 2024"
+  },
+  "slides": {
+    "intro": {
+      "title": "Welcome to the Presentation",
+      "subtitle": "A brief introduction to the topic"
+    },
+    "agenda": {
+      "title": "Agenda",
+      "items": [
+        "Introduction to the topic",
+        "Key concepts",
+        "Practical demonstration",
+        "Questions and answers"
+      ]
+    },
+    "section1": {
+      "title": "Section 1",
+      "heading": "Key Concepts",
+      "content": "Here you can explain the fundamental concepts of your topic. Use bullet points to organize information clearly.",
+      "points": [
+        "First important point",
+        "Second relevant point",
+        "Third aspect to consider"
+      ]
+    },
+    "section2": {
+      "title": "Section 2",
+      "heading": "Demonstration",
+      "content": "This section can include practical examples, code, or images that illustrate the presented concepts."
+    },
+    "quote": {
+      "text": "Simplicity is the ultimate sophistication.",
+      "author": "Leonardo da Vinci"
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "heading": "Summary",
+      "points": [
+        "Recap of the first point",
+        "Recap of the second point",
+        "Recommended next steps"
+      ]
+    },
+    "thanks": {
+      "title": "Thank You!",
+      "subtitle": "Questions?",
+      "contact": "contact@example.com"
+    }
+  }
+}

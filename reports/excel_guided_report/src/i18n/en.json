@@ -1,0 +1,41 @@
+{
+  "report": {
+    "title": "Report",
+    "generatedAt": "Generated at",
+    "page": "Page",
+    "of": "of",
+    "total": "Total",
+    "average": "Average",
+    "summary": "Summary",
+    "details": "Details"
+  },
+  "sheets": {
+    "summary": "Summary",
+    "data": "Data",
+    "charts": "Charts"
+  },
+  "headers": {
+    "id": "ID",
+    "name": "Name",
+    "date": "Date",
+    "value": "Value",
+    "status": "Status",
+    "category": "Category",
+    "description": "Description",
+    "quantity": "Quantity",
+    "price": "Price",
+    "total": "Total"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "charts": {
+    "salesByMonth": "Sales by Month",
+    "categoryDistribution": "Category Distribution",
+    "trendAnalysis": "Trend Analysis"
+  }
+}

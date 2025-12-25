@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers</title>
+  <link rel="stylesheet" href="./styles/tokens.css">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <div class="controls">
+    <button id="locale-toggle">PT</button>
+    <button id="theme-toggle">🌙</button>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 data-i18n="hero.title">Construa o futuro conosco</h1>
+      <p data-i18n="hero.subtitle">Junte-se a uma equipe apaixonada por inovação.</p>
+      <a href="#positions" class="btn btn-primary" data-i18n="hero.cta">Ver Vagas Abertas</a>
+    </div>
+  </section>
+
+  <!-- Culture -->
+  <section class="culture">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="culture.title">Nossa Cultura</h2>
+        <p data-i18n="culture.subtitle">Valorizamos pessoas que querem fazer a diferença</p>
+      </div>
+      <div class="values-grid" id="values-grid"></div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="benefits.title">Benefícios</h2>
+        <p data-i18n="benefits.subtitle">Investimos no seu crescimento e bem-estar</p>
+      </div>
+      <div class="benefits-grid" id="benefits-grid"></div>
+    </div>
+  </section>
+
+  <!-- Positions -->
+  <section id="positions" class="positions">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="positions.title">Vagas Abertas</h2>
+        <p data-i18n="positions.subtitle">Encontre a oportunidade perfeita</p>
+      </div>
+      <div class="positions-list" id="positions-list"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="testimonials.title">O que nosso time diz</h2>
+        <p data-i18n="testimonials.subtitle">Histórias de quem vive nossa cultura</p>
+      </div>
+      <div class="testimonials-grid" id="testimonials-grid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p data-i18n="footer.copyright">© 2024 Sua Empresa</p>
+    </div>
+  </footer>
+
+  <script>
+    let locale = localStorage.getItem('locale') || 'pt';
+    let theme = localStorage.getItem('theme') || 'light';
+    let translations = {};
+
+    async function init() {
+      await loadTranslations();
+      applyTheme();
+      applyTranslations();
+      renderAll();
+    }
+
+    async function loadTranslations() {
+      const ptRes = await fetch('./i18n/pt.json');
+      const enRes = await fetch('./i18n/en.json');
+      translations = { pt: await ptRes.json(), en: await enRes.json() };
+    }
+
+    function t(key) {
+      const keys = key.split('.');
+      let value = translations[locale];
+      for (const k of keys) value = value?.[k];
+      return value || key;
+    }
+
+    function applyTheme() {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    function applyTranslations() {
+      document.getElementById('locale-toggle').textContent = locale.toUpperCase();
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = t(el.getAttribute('data-i18n'));
+      });
+    }
+
+    function renderAll() {
+      // Values
+      const values = t('culture.values');
+      if (Array.isArray(values)) {
+        document.getElementById('values-grid').innerHTML = values.map(v => `
+          <div class="value-card">
+            <div class="value-icon">${v.icon}</div>
+            <h3>${v.title}</h3>
+            <p>${v.description}</p>
+          </div>
+        `).join('');
+      }
+
+      // Benefits
+      const benefits = t('benefits.items');
+      if (Array.isArray(benefits)) {
+        document.getElementById('benefits-grid').innerHTML = benefits.map(b => `
+          <div class="benefit-item">
+            <span class="benefit-icon">${b.icon}</span>
+            <div>
+              <h3>${b.title}</h3>
+              <p>${b.description}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Positions
+      const positions = t('positions.list');
+      const applyText = t('positions.apply');
+      if (Array.isArray(positions)) {
+        document.getElementById('positions-list').innerHTML = positions.map(p => `
+          <div class="position-card">
+            <div class="position-info">
+              <h3>${p.title}</h3>
+              <div class="position-meta">
+                <span>${p.department}</span>
+                <span>📍 ${p.location}</span>
+                <span>${p.type}</span>
+              </div>
+            </div>
+            <a href="#" class="btn">${applyText}</a>
+          </div>
+        `).join('');
+      }
+
+      // Testimonials
+      const testimonials = t('testimonials.list');
+      if (Array.isArray(testimonials)) {
+        document.getElementById('testimonials-grid').innerHTML = testimonials.map(t => `
+          <div class="testimonial-card">
+            <p class="testimonial-text">"${t.text}"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">${t.avatar}</div>
+              <div class="author-info">
+                <h4>${t.name}</h4>
+                <p>${t.role}</p>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', theme);
+      applyTheme();
+    });
+
+    document.getElementById('locale-toggle').addEventListener('click', () => {
+      locale = locale === 'pt' ? 'en' : 'pt';
+      localStorage.setItem('locale', locale);
+      applyTranslations();
+      renderAll();
+    });
+
+    init();
+  </script>
+</body>
+</html>

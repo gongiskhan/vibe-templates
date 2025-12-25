@@ -1,0 +1,31 @@
+{
+  "$schema": "../../templates.schema.json",
+  "id": "excel_guided_report",
+  "name": "Excel Guided Report Generator",
+  "version": "1.0.0",
+  "category": "report",
+  "description": "Template-based Excel report generator with branding, charts, and data binding",
+  "author": "Vibe Templates",
+  "features": [
+    "Template-based Excel generation",
+    "Data binding from JSON",
+    "Chart generation",
+    "Conditional formatting",
+    "Multiple sheet support",
+    "Brand colors in charts",
+    "i18n support (PT/EN)",
+    "CLI and programmatic API"
+  ],
+  "branding": {
+    "config": "./src/brand.config.ts"
+  },
+  "i18n": {
+    "default": "pt",
+    "supported": ["pt", "en"],
+    "files": "./src/i18n/"
+  },
+  "scripts": {
+    "generate": "npm run generate",
+    "example": "npm run example"
+  }
+}

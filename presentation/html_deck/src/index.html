@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="deck.title">Título da Apresentação</title>
+  <link rel="stylesheet" href="./styles/tokens.css">
+  <link rel="stylesheet" href="./styles/deck.css">
+</head>
+<body>
+  <div class="deck">
+    <!-- Slide 1: Title -->
+    <section class="slide slide--title active">
+      <h1 data-i18n="slides.intro.title">Bem-vindo à Apresentação</h1>
+      <p class="subtitle" data-i18n="slides.intro.subtitle">Uma breve introdução ao tema</p>
+      <div class="speaker-notes">
+        Apresente-se e agradeça a presença de todos.
+      </div>
+    </section>
+
+    <!-- Slide 2: Agenda -->
+    <section class="slide slide--content">
+      <h2 data-i18n="slides.agenda.title">Agenda</h2>
+      <ol>
+        <li class="fragment">Introdução ao tema</li>
+        <li class="fragment">Principais conceitos</li>
+        <li class="fragment">Demonstração prática</li>
+        <li class="fragment">Perguntas e respostas</li>
+      </ol>
+    </section>
+
+    <!-- Slide 3: Section Divider -->
+    <section class="slide slide--section">
+      <h2 data-i18n="slides.section1.title">Seção 1</h2>
+    </section>
+
+    <!-- Slide 4: Content -->
+    <section class="slide slide--content">
+      <h2 data-i18n="slides.section1.heading">Principais Conceitos</h2>
+      <p data-i18n="slides.section1.content">
+        Aqui você pode explicar os conceitos fundamentais do seu tema.
+        Use bullet points para organizar as informações de forma clara.
+      </p>
+      <ul>
+        <li class="fragment">Primeiro ponto importante</li>
+        <li class="fragment">Segundo ponto relevante</li>
+        <li class="fragment">Terceiro aspecto a considerar</li>
+      </ul>
+    </section>
+
+    <!-- Slide 5: Two Columns -->
+    <section class="slide slide--split">
+      <div class="column">
+        <h2 data-i18n="slides.section2.heading">Demonstração</h2>
+        <p data-i18n="slides.section2.content">
+          Esta seção pode incluir exemplos práticos, código, ou imagens
+          que ilustrem os conceitos apresentados.
+        </p>
+      </div>
+      <div class="column">
+        <div class="code-block">
+          <code>
+// Exemplo de código
+function hello() {
+  console.log("Olá, mundo!");
+}
+          </code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Quote -->
+    <section class="slide slide--quote">
+      <blockquote data-i18n="slides.quote.text">
+        A simplicidade é a sofisticação suprema.
+      </blockquote>
+      <cite data-i18n="slides.quote.author">— Leonardo da Vinci</cite>
+    </section>
+
+    <!-- Slide 7: Image Example (with gradient background) -->
+    <section class="slide slide--section bg-gradient-brand">
+      <h2 data-i18n="slides.section2.title">Seção 2</h2>
+    </section>
+
+    <!-- Slide 8: Conclusion -->
+    <section class="slide slide--content">
+      <h2 data-i18n="slides.conclusion.heading">Resumo</h2>
+      <ul>
+        <li class="fragment">Recapitulação do primeiro ponto</li>
+        <li class="fragment">Recapitulação do segundo ponto</li>
+        <li class="fragment">Próximos passos recomendados</li>
+      </ul>
+    </section>
+
+    <!-- Slide 9: Thanks -->
+    <section class="slide slide--title bg-gradient-brand-subtle" style="color: white;">
+      <h1 data-i18n="slides.thanks.title">Obrigado!</h1>
+      <p class="subtitle" data-i18n="slides.thanks.subtitle" style="color: rgba(255,255,255,0.8);">Perguntas?</p>
+      <p class="subtitle" style="margin-top: 2rem; color: rgba(255,255,255,0.6);">
+        <span data-i18n="slides.thanks.contact">contato@exemplo.com</span>
+      </p>
+    </section>
+  </div>
+
+  <script src="./scripts/deck.js"></script>
+</body>
+</html>

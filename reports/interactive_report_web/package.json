@@ -1,0 +1,11 @@
+{
+  "name": "interactive-report-web",
+  "version": "1.0.0",
+  "description": "Interactive web-based report with charts, filters, and drill-down",
+  "scripts": {
+    "dev": "npx serve src -p 3005"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

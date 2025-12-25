@@ -1,0 +1,41 @@
+{
+  "report": {
+    "title": "Relatório",
+    "generatedAt": "Gerado em",
+    "page": "Página",
+    "of": "de",
+    "total": "Total",
+    "average": "Média",
+    "summary": "Resumo",
+    "details": "Detalhes"
+  },
+  "sheets": {
+    "summary": "Resumo",
+    "data": "Dados",
+    "charts": "Gráficos"
+  },
+  "headers": {
+    "id": "ID",
+    "name": "Nome",
+    "date": "Data",
+    "value": "Valor",
+    "status": "Status",
+    "category": "Categoria",
+    "description": "Descrição",
+    "quantity": "Quantidade",
+    "price": "Preço",
+    "total": "Total"
+  },
+  "status": {
+    "active": "Ativo",
+    "inactive": "Inativo",
+    "pending": "Pendente",
+    "completed": "Concluído",
+    "cancelled": "Cancelado"
+  },
+  "charts": {
+    "salesByMonth": "Vendas por Mês",
+    "categoryDistribution": "Distribuição por Categoria",
+    "trendAnalysis": "Análise de Tendência"
+  }
+}

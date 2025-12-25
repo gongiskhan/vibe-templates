@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Story</title>
+  <link rel="stylesheet" href="./styles/tokens.css">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <div class="controls">
+    <button id="locale-toggle">PT</button>
+    <button id="theme-toggle">🌙</button>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-tag" data-i18n="hero.tag">Case de Sucesso</span>
+      <h1 data-i18n="hero.title">Como a TechCorp aumentou sua produtividade em 300%</h1>
+      <p data-i18n="hero.subtitle">Uma história de transformação digital.</p>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="story-section">
+    <div class="container">
+      <h2><span data-i18n="problem.icon">⚠️</span> <span data-i18n="problem.title">O Desafio</span></h2>
+      <p data-i18n="problem.description"></p>
+      <ul id="problem-points"></ul>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="story-section">
+    <div class="container">
+      <h2><span data-i18n="solution.icon">💡</span> <span data-i18n="solution.title">A Solução</span></h2>
+      <p data-i18n="solution.description"></p>
+      <ul id="solution-points"></ul>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="story-section">
+    <div class="container">
+      <h2><span data-i18n="results.icon">📈</span> <span data-i18n="results.title">Os Resultados</span></h2>
+      <p data-i18n="results.description"></p>
+      <div class="results-grid" id="results-grid"></div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-content">
+        <p class="quote-text" data-i18n="quote.text"></p>
+        <div class="quote-author" id="quote-author"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 data-i18n="cta.title">Pronto para sua transformação?</h2>
+      <p data-i18n="cta.subtitle">Agende uma demonstração.</p>
+      <a href="#" class="btn btn-primary" data-i18n="cta.button">Agendar Demonstração</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p data-i18n="footer.copyright">© 2024 Sua Empresa</p>
+    </div>
+  </footer>
+
+  <script>
+    let locale = localStorage.getItem('locale') || 'pt';
+    let theme = localStorage.getItem('theme') || 'light';
+    let translations = {};
+
+    async function init() {
+      await loadTranslations();
+      applyTheme();
+      applyTranslations();
+      renderDynamic();
+    }
+
+    async function loadTranslations() {
+      const ptRes = await fetch('./i18n/pt.json');
+      const enRes = await fetch('./i18n/en.json');
+      translations = { pt: await ptRes.json(), en: await enRes.json() };
+    }
+
+    function t(key) {
+      const keys = key.split('.');
+      let value = translations[locale];
+      for (const k of keys) value = value?.[k];
+      return value || key;
+    }
+
+    function applyTheme() {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    function applyTranslations() {
+      document.getElementById('locale-toggle').textContent = locale.toUpperCase();
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = t(el.getAttribute('data-i18n'));
+      });
+    }
+
+    function renderDynamic() {
+      // Problem points
+      const problemPoints = t('problem.points');
+      if (Array.isArray(problemPoints)) {
+        document.getElementById('problem-points').innerHTML = problemPoints.map(p => `<li>${p}</li>`).join('');
+      }
+
+      // Solution points
+      const solutionPoints = t('solution.points');
+      if (Array.isArray(solutionPoints)) {
+        document.getElementById('solution-points').innerHTML = solutionPoints.map(p => `<li>${p}</li>`).join('');
+      }
+
+      // Results
+      const metrics = t('results.metrics');
+      if (Array.isArray(metrics)) {
+        document.getElementById('results-grid').innerHTML = metrics.map(m => `
+          <div class="result-card">
+            <div class="result-value">${m.value}</div>
+            <div class="result-label">${m.label}</div>
+          </div>
+        `).join('');
+      }
+
+      // Quote author
+      const author = t('quote.author');
+      if (author) {
+        document.getElementById('quote-author').innerHTML = `
+          <div class="author-avatar">${author.avatar}</div>
+          <div class="author-info">
+            <h4>${author.name}</h4>
+            <p>${author.role}</p>
+          </div>
+        `;
+      }
+    }
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', theme);
+      applyTheme();
+    });
+
+    document.getElementById('locale-toggle').addEventListener('click', () => {
+      locale = locale === 'pt' ? 'en' : 'pt';
+      localStorage.setItem('locale', locale);
+      applyTranslations();
+      renderDynamic();
+    });
+
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "$schema": "../../templates.schema.json",
+  "id": "event_webinar",
+  "name": "Event/Webinar Landing Page",
+  "version": "1.0.0",
+  "category": "landing-page",
+  "description": "Event or webinar registration landing page with speakers, agenda, and signup",
+  "author": "Vibe Templates",
+  "features": [
+    "Event details with date/time",
+    "Speakers section with bios",
+    "Agenda/schedule timeline",
+    "Registration form",
+    "Add to calendar button",
+    "Responsive design",
+    "Multi-locale support (PT/EN)",
+    "CSS variable theming"
+  ],
+  "branding": {
+    "tokens": "./src/styles/tokens.css",
+    "assets": "./src/assets/"
+  },
+  "i18n": {
+    "default": "pt",
+    "supported": ["pt", "en"],
+    "files": "./src/i18n/"
+  }
+}

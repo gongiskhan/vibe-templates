@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "title": "Build the future with us",
+    "subtitle": "Join a team passionate about innovation and positive impact in the world.",
+    "cta": "View Open Positions"
+  },
+  "culture": {
+    "title": "Our Culture",
+    "subtitle": "We value people who want to make a difference",
+    "values": [
+      {
+        "icon": "🚀",
+        "title": "Innovation",
+        "description": "We always seek new ways to solve problems and create value."
+      },
+      {
+        "icon": "🤝",
+        "title": "Collaboration",
+        "description": "We believe that together we go further."
+      },
+      {
+        "icon": "🎯",
+        "title": "Excellence",
+        "description": "We are dedicated to delivering the best in everything we do."
+      },
+      {
+        "icon": "💚",
+        "title": "Well-being",
+        "description": "We take care of people and promote balance."
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Benefits",
+    "subtitle": "We invest in your growth and well-being",
+    "items": [
+      { "icon": "💰", "title": "Competitive salary", "description": "Above-market compensation" },
+      { "icon": "🏠", "title": "Remote work", "description": "Flexibility to work from anywhere" },
+      { "icon": "📚", "title": "Education", "description": "Annual budget for courses and conferences" },
+      { "icon": "🏥", "title": "Health insurance", "description": "Full coverage for you and family" },
+      { "icon": "🏋️", "title": "Gym membership", "description": "Access to gyms and activities" },
+      { "icon": "🎉", "title": "Birthday day off", "description": "Day off on your special day" }
+    ]
+  },
+  "positions": {
+    "title": "Open Positions",
+    "subtitle": "Find the perfect opportunity for you",
+    "list": [
+      { "title": "Senior Software Engineer", "department": "Engineering", "location": "Remote", "type": "Full-time" },
+      { "title": "Product Designer", "department": "Design", "location": "São Paulo", "type": "Full-time" },
+      { "title": "Data Analyst", "department": "Data", "location": "Remote", "type": "Full-time" },
+      { "title": "DevOps Engineer", "department": "Infrastructure", "location": "Remote", "type": "Full-time" }
+    ],
+    "apply": "Apply"
+  },
+  "testimonials": {
+    "title": "What our team says",
+    "subtitle": "Stories from those who live our culture",
+    "list": [
+      {
+        "avatar": "👩‍💻",
+        "text": "Working here transformed my career. The culture of continuous learning is real.",
+        "name": "Ana Silva",
+        "role": "Tech Lead, 3 years"
+      },
+      {
+        "avatar": "👨‍🎨",
+        "text": "I've never felt so valued at a job. The environment is incredible.",
+        "name": "Carlos Santos",
+        "role": "Product Designer, 2 years"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2024 Your Company. All rights reserved."
+  }
+}

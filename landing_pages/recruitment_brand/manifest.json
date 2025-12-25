@@ -1,0 +1,28 @@
+{
+  "$schema": "../../templates.schema.json",
+  "id": "recruitment_brand",
+  "name": "Recruitment/Employer Branding Landing Page",
+  "version": "1.0.0",
+  "category": "landing-page",
+  "description": "Employer branding and recruitment landing page with culture, benefits, and open positions",
+  "author": "Vibe Templates",
+  "features": [
+    "Company culture section",
+    "Benefits and perks showcase",
+    "Open positions listing",
+    "Team testimonials",
+    "Application form",
+    "Responsive design",
+    "Multi-locale support (PT/EN)",
+    "CSS variable theming"
+  ],
+  "branding": {
+    "tokens": "./src/styles/tokens.css",
+    "assets": "./src/assets/"
+  },
+  "i18n": {
+    "default": "pt",
+    "supported": ["pt", "en"],
+    "files": "./src/i18n/"
+  }
+}

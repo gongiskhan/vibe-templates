@@ -1,0 +1,11 @@
+{
+  "name": "product-story-landing",
+  "version": "1.0.0",
+  "description": "Product story/case study landing page template",
+  "scripts": {
+    "dev": "npx serve src -p 3004"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

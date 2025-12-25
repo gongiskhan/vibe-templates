@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "tag": "Case de Sucesso",
+    "title": "Como a TechCorp aumentou sua produtividade em 300%",
+    "subtitle": "Uma história de transformação digital que mudou a forma como a empresa opera."
+  },
+  "problem": {
+    "title": "O Desafio",
+    "icon": "⚠️",
+    "description": "A TechCorp enfrentava problemas sérios de produtividade. Processos manuais, dados fragmentados e comunicação ineficiente estavam custando milhões por ano.",
+    "points": [
+      "Equipes gastavam 40% do tempo em tarefas manuais repetitivas",
+      "Dados espalhados em dezenas de planilhas desconectadas",
+      "Tempo médio de resposta ao cliente: 48 horas",
+      "Alta rotatividade de funcionários frustrados"
+    ]
+  },
+  "solution": {
+    "title": "A Solução",
+    "icon": "💡",
+    "description": "Implementamos nossa plataforma integrada que automatizou processos, centralizou dados e melhorou a comunicação entre equipes.",
+    "points": [
+      "Automação de fluxos de trabalho repetitivos",
+      "Dashboard unificado com dados em tempo real",
+      "Sistema de tickets integrado com IA",
+      "Treinamento personalizado para toda a equipe"
+    ]
+  },
+  "results": {
+    "title": "Os Resultados",
+    "icon": "📈",
+    "description": "Em apenas 6 meses, a transformação foi visível em todos os indicadores da empresa.",
+    "metrics": [
+      { "value": "300%", "label": "Aumento de produtividade" },
+      { "value": "2h", "label": "Tempo médio de resposta" },
+      { "value": "R$2M", "label": "Economia anual" }
+    ]
+  },
+  "quote": {
+    "text": "A implementação mudou completamente nossa operação. Hoje temos visibilidade total do negócio e nossa equipe finalmente pode focar no que importa: nossos clientes.",
+    "author": {
+      "avatar": "👨‍💼",
+      "name": "Roberto Almeida",
+      "role": "CEO, TechCorp"
+    }
+  },
+  "cta": {
+    "title": "Pronto para sua transformação?",
+    "subtitle": "Agende uma demonstração e descubra como podemos ajudar sua empresa.",
+    "button": "Agendar Demonstração"
+  },
+  "footer": {
+    "copyright": "© 2024 Sua Empresa. Todos os direitos reservados."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "recruitment-brand-landing",
+  "version": "1.0.0",
+  "description": "Recruitment/employer branding landing page template",
+  "scripts": {
+    "dev": "npx serve src -p 3003"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

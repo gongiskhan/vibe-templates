@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "badge": "Lançamento Exclusivo",
+    "title": "Transforme sua forma de trabalhar",
+    "subtitle": "Descubra a nova solução que vai revolucionar sua produtividade. Cadastre-se para acesso antecipado.",
+    "cta": "Quero Acesso Antecipado",
+    "learnMore": "Saiba Mais"
+  },
+  "countdown": {
+    "title": "Lançamento em",
+    "days": "Dias",
+    "hours": "Horas",
+    "minutes": "Min",
+    "seconds": "Seg"
+  },
+  "features": {
+    "title": "Por que escolher nossa solução?",
+    "subtitle": "Desenvolvido pensando em você, com recursos que fazem a diferença.",
+    "items": [
+      {
+        "icon": "⚡",
+        "title": "Ultra Rápido",
+        "description": "Performance otimizada para você não perder tempo."
+      },
+      {
+        "icon": "🔒",
+        "title": "Seguro",
+        "description": "Seus dados protegidos com criptografia de ponta."
+      },
+      {
+        "icon": "🎯",
+        "title": "Intuitivo",
+        "description": "Interface simples que qualquer um pode usar."
+      },
+      {
+        "icon": "🚀",
+        "title": "Escalável",
+        "description": "Cresce junto com o seu negócio sem limites."
+      },
+      {
+        "icon": "💡",
+        "title": "Inteligente",
+        "description": "IA integrada para automatizar tarefas repetitivas."
+      },
+      {
+        "icon": "🌍",
+        "title": "Global",
+        "description": "Disponível em qualquer lugar, a qualquer momento."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Não perca o lançamento",
+    "subtitle": "Seja o primeiro a experimentar. Vagas limitadas para acesso beta.",
+    "placeholder": "Seu melhor e-mail",
+    "button": "Garantir Minha Vaga"
+  },
+  "footer": {
+    "copyright": "© 2024 Sua Empresa. Todos os direitos reservados."
+  },
+  "ui": {
+    "theme": "Tema",
+    "language": "Idioma"
+  }
+}

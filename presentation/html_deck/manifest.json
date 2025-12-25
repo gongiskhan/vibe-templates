@@ -1,0 +1,41 @@
+{
+  "$schema": "../../templates.schema.json",
+  "id": "html_deck",
+  "name": "HTML Slide Deck",
+  "version": "1.0.0",
+  "category": "presentation",
+  "description": "Presentation slide deck with keyboard navigation and PDF export",
+  "author": "Vibe Templates",
+  "features": [
+    "Keyboard navigation (arrows, space, escape)",
+    "Touch/swipe support for mobile",
+    "PDF export via Playwright",
+    "Fullscreen mode",
+    "Progress indicator",
+    "Speaker notes support",
+    "Multi-locale support (PT/EN)",
+    "CSS variable theming",
+    "Print-friendly styles"
+  ],
+  "branding": {
+    "tokens": "./src/styles/tokens.css",
+    "assets": "./src/assets/"
+  },
+  "i18n": {
+    "default": "pt",
+    "supported": ["pt", "en"],
+    "files": "./src/i18n/"
+  },
+  "scripts": {
+    "dev": "npm run dev",
+    "export:pdf": "npm run export:pdf"
+  },
+  "structure": {
+    "src/index.html": "Main deck entry point",
+    "src/styles/tokens.css": "Brand tokens (colors, fonts)",
+    "src/styles/deck.css": "Slide presentation styles",
+    "src/scripts/deck.js": "Navigation and interaction logic",
+    "src/i18n/": "Localization files",
+    "scripts/export-pdf.ts": "Playwright PDF export script"
+  }
+}

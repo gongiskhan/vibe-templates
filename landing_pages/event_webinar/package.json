@@ -1,0 +1,11 @@
+{
+  "name": "event-webinar-landing",
+  "version": "1.0.0",
+  "description": "Event/webinar registration landing page template",
+  "scripts": {
+    "dev": "npx serve src -p 3002"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

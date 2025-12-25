@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "tag": "Success Story",
+    "title": "How TechCorp increased productivity by 300%",
+    "subtitle": "A digital transformation story that changed how the company operates."
+  },
+  "problem": {
+    "title": "The Challenge",
+    "icon": "⚠️",
+    "description": "TechCorp faced serious productivity issues. Manual processes, fragmented data, and inefficient communication were costing millions per year.",
+    "points": [
+      "Teams spent 40% of time on repetitive manual tasks",
+      "Data scattered across dozens of disconnected spreadsheets",
+      "Average customer response time: 48 hours",
+      "High turnover of frustrated employees"
+    ]
+  },
+  "solution": {
+    "title": "The Solution",
+    "icon": "💡",
+    "description": "We implemented our integrated platform that automated processes, centralized data, and improved team communication.",
+    "points": [
+      "Automation of repetitive workflows",
+      "Unified dashboard with real-time data",
+      "AI-integrated ticketing system",
+      "Personalized training for the entire team"
+    ]
+  },
+  "results": {
+    "title": "The Results",
+    "icon": "📈",
+    "description": "In just 6 months, the transformation was visible across all company metrics.",
+    "metrics": [
+      { "value": "300%", "label": "Productivity increase" },
+      { "value": "2h", "label": "Average response time" },
+      { "value": "$2M", "label": "Annual savings" }
+    ]
+  },
+  "quote": {
+    "text": "The implementation completely changed our operation. Today we have full visibility of the business and our team can finally focus on what matters: our customers.",
+    "author": {
+      "avatar": "👨‍💼",
+      "name": "Robert Almeida",
+      "role": "CEO, TechCorp"
+    }
+  },
+  "cta": {
+    "title": "Ready for your transformation?",
+    "subtitle": "Schedule a demo and discover how we can help your company.",
+    "button": "Schedule Demo"
+  },
+  "footer": {
+    "copyright": "© 2024 Your Company. All rights reserved."
+  }
+}

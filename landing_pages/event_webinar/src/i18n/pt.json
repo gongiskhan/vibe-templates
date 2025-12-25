@@ -1,0 +1,71 @@
+{
+  "header": {
+    "type": "Webinar Gratuito",
+    "title": "Dominando o Desenvolvimento Moderno",
+    "date": "15 de Janeiro, 2025",
+    "time": "14:00 - 16:00 BRT",
+    "location": "Online via Zoom",
+    "cta": "Inscreva-se Gratuitamente"
+  },
+  "speakers": {
+    "title": "Palestrantes",
+    "subtitle": "Aprenda com especialistas da indústria",
+    "list": [
+      {
+        "avatar": "👨‍💻",
+        "name": "João Silva",
+        "role": "Tech Lead @ TechCorp",
+        "bio": "10+ anos de experiência em desenvolvimento de software e arquitetura de sistemas."
+      },
+      {
+        "avatar": "👩‍💼",
+        "name": "Maria Santos",
+        "role": "CTO @ StartupX",
+        "bio": "Especialista em escalabilidade e cultura de engenharia."
+      },
+      {
+        "avatar": "👨‍🔬",
+        "name": "Pedro Costa",
+        "role": "DevRel @ CloudCo",
+        "bio": "Apaixonado por compartilhar conhecimento e construir comunidades."
+      }
+    ]
+  },
+  "agenda": {
+    "title": "Agenda",
+    "subtitle": "O que você vai aprender",
+    "items": [
+      {
+        "time": "14:00",
+        "title": "Abertura e Boas-vindas",
+        "description": "Introdução ao tema e apresentação dos palestrantes"
+      },
+      {
+        "time": "14:15",
+        "title": "Tendências em Desenvolvimento 2025",
+        "description": "As principais tecnologias e práticas que estão moldando o futuro"
+      },
+      {
+        "time": "15:00",
+        "title": "Demo Ao Vivo",
+        "description": "Demonstração prática das técnicas apresentadas"
+      },
+      {
+        "time": "15:30",
+        "title": "Q&A",
+        "description": "Perguntas e respostas com os palestrantes"
+      }
+    ]
+  },
+  "register": {
+    "title": "Reserve sua vaga",
+    "subtitle": "Vagas limitadas - Inscreva-se agora!",
+    "name": "Nome completo",
+    "email": "E-mail",
+    "company": "Empresa (opcional)",
+    "button": "Confirmar Inscrição"
+  },
+  "footer": {
+    "copyright": "© 2024 Sua Empresa. Todos os direitos reservados."
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "title": "Construa o futuro conosco",
+    "subtitle": "Junte-se a uma equipe apaixonada por inovação e impacto positivo no mundo.",
+    "cta": "Ver Vagas Abertas"
+  },
+  "culture": {
+    "title": "Nossa Cultura",
+    "subtitle": "Valorizamos pessoas que querem fazer a diferença",
+    "values": [
+      {
+        "icon": "🚀",
+        "title": "Inovação",
+        "description": "Buscamos sempre novas formas de resolver problemas e criar valor."
+      },
+      {
+        "icon": "🤝",
+        "title": "Colaboração",
+        "description": "Acreditamos que juntos vamos mais longe."
+      },
+      {
+        "icon": "🎯",
+        "title": "Excelência",
+        "description": "Nos dedicamos a entregar o melhor em tudo que fazemos."
+      },
+      {
+        "icon": "💚",
+        "title": "Bem-estar",
+        "description": "Cuidamos das pessoas e promovemos equilíbrio."
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Benefícios",
+    "subtitle": "Investimos no seu crescimento e bem-estar",
+    "items": [
+      { "icon": "💰", "title": "Salário competitivo", "description": "Remuneração acima do mercado" },
+      { "icon": "🏠", "title": "Trabalho remoto", "description": "Flexibilidade para trabalhar de onde quiser" },
+      { "icon": "📚", "title": "Educação", "description": "Budget anual para cursos e conferências" },
+      { "icon": "🏥", "title": "Plano de saúde", "description": "Cobertura completa para você e família" },
+      { "icon": "🏋️", "title": "Gympass", "description": "Acesso a academias e atividades" },
+      { "icon": "🎉", "title": "Day off aniversário", "description": "Folga no seu dia especial" }
+    ]
+  },
+  "positions": {
+    "title": "Vagas Abertas",
+    "subtitle": "Encontre a oportunidade perfeita para você",
+    "list": [
+      { "title": "Senior Software Engineer", "department": "Engenharia", "location": "Remoto", "type": "Tempo integral" },
+      { "title": "Product Designer", "department": "Design", "location": "São Paulo", "type": "Tempo integral" },
+      { "title": "Data Analyst", "department": "Dados", "location": "Remoto", "type": "Tempo integral" },
+      { "title": "DevOps Engineer", "department": "Infraestrutura", "location": "Remoto", "type": "Tempo integral" }
+    ],
+    "apply": "Candidatar"
+  },
+  "testimonials": {
+    "title": "O que nosso time diz",
+    "subtitle": "Histórias de quem vive nossa cultura",
+    "list": [
+      {
+        "avatar": "👩‍💻",
+        "text": "Trabalhar aqui transformou minha carreira. A cultura de aprendizado contínuo é real.",
+        "name": "Ana Silva",
+        "role": "Tech Lead, 3 anos"
+      },
+      {
+        "avatar": "👨‍🎨",
+        "text": "Nunca me senti tão valorizado em um trabalho. O ambiente é incrível.",
+        "name": "Carlos Santos",
+        "role": "Product Designer, 2 anos"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2024 Sua Empresa. Todos os direitos reservados."
+  }
+}

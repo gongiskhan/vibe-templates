@@ -1,0 +1,60 @@
+{
+  "ui": {
+    "navHint": "← → para navegar | F fullscreen | T tema | L idioma",
+    "slideOf": "de"
+  },
+  "deck": {
+    "title": "Título da Apresentação",
+    "subtitle": "Subtítulo ou descrição",
+    "author": "Seu Nome",
+    "date": "Dezembro 2024"
+  },
+  "slides": {
+    "intro": {
+      "title": "Bem-vindo à Apresentação",
+      "subtitle": "Uma breve introdução ao tema"
+    },
+    "agenda": {
+      "title": "Agenda",
+      "items": [
+        "Introdução ao tema",
+        "Principais conceitos",
+        "Demonstração prática",
+        "Perguntas e respostas"
+      ]
+    },
+    "section1": {
+      "title": "Seção 1",
+      "heading": "Principais Conceitos",
+      "content": "Aqui você pode explicar os conceitos fundamentais do seu tema. Use bullet points para organizar as informações de forma clara.",
+      "points": [
+        "Primeiro ponto importante",
+        "Segundo ponto relevante",
+        "Terceiro aspecto a considerar"
+      ]
+    },
+    "section2": {
+      "title": "Seção 2",
+      "heading": "Demonstração",
+      "content": "Esta seção pode incluir exemplos práticos, código, ou imagens que ilustrem os conceitos apresentados."
+    },
+    "quote": {
+      "text": "A simplicidade é a sofisticação suprema.",
+      "author": "Leonardo da Vinci"
+    },
+    "conclusion": {
+      "title": "Conclusão",
+      "heading": "Resumo",
+      "points": [
+        "Recapitulação do primeiro ponto",
+        "Recapitulação do segundo ponto",
+        "Próximos passos recomendados"
+      ]
+    },
+    "thanks": {
+      "title": "Obrigado!",
+      "subtitle": "Perguntas?",
+      "contact": "contato@exemplo.com"
+    }
+  }
+}

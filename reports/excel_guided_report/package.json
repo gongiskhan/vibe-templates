@@ -1,0 +1,22 @@
+{
+  "name": "excel-guided-report",
+  "version": "1.0.0",
+  "description": "Template-based Excel report generator with branding and i18n",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "generate": "tsx src/cli.ts",
+    "example": "tsx src/example.ts",
+    "dev": "tsx watch src/example.ts"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}

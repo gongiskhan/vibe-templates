@@ -1,0 +1,67 @@
+{
+  "report": {
+    "title": "Sales Report",
+    "subtitle": "Detailed analysis of selected period",
+    "generatedAt": "Generated at"
+  },
+  "filters": {
+    "dateRange": "Date Range",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "category": "Category",
+    "status": "Status",
+    "all": "All",
+    "apply": "Apply Filters",
+    "reset": "Reset"
+  },
+  "actions": {
+    "export": "Export",
+    "exportPDF": "Export PDF",
+    "exportCSV": "Export CSV",
+    "print": "Print",
+    "refresh": "Refresh"
+  },
+  "kpis": {
+    "totalRevenue": "Total Revenue",
+    "totalOrders": "Total Orders",
+    "averageTicket": "Average Ticket",
+    "conversionRate": "Conversion Rate",
+    "vsLastPeriod": "vs last period"
+  },
+  "charts": {
+    "revenueByMonth": "Revenue by Month",
+    "salesByCategory": "Sales by Category",
+    "topProducts": "Top Products",
+    "orderStatus": "Order Status"
+  },
+  "table": {
+    "title": "Sales Detail",
+    "columns": {
+      "id": "ID",
+      "date": "Date",
+      "customer": "Customer",
+      "product": "Product",
+      "category": "Category",
+      "quantity": "Qty",
+      "value": "Value",
+      "status": "Status"
+    },
+    "noData": "No data found",
+    "showMore": "Show More"
+  },
+  "status": {
+    "completed": "Completed",
+    "pending": "Pending",
+    "cancelled": "Cancelled"
+  },
+  "modal": {
+    "title": "Order Details",
+    "close": "Close"
+  },
+  "categories": {
+    "electronics": "Electronics",
+    "furniture": "Furniture",
+    "clothing": "Clothing",
+    "accessories": "Accessories"
+  }
+}

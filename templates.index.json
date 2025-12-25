@@ -55,6 +55,61 @@
       "description": "Interface para executar agentes com streaming de output"
     }
   ],
+  "presentations": [
+    {
+      "id": "html_deck",
+      "name": "HTML Slide Deck",
+      "path": "./presentation/html_deck",
+      "category": "presentation",
+      "description": "Apresentação de slides com navegação por teclado e exportação PDF"
+    }
+  ],
+  "landing_pages": [
+    {
+      "id": "campaign_launch",
+      "name": "Campaign Launch",
+      "path": "./landing_pages/campaign_launch",
+      "category": "landing-page",
+      "description": "Landing page para lançamento de produto/campanha com countdown e CTA"
+    },
+    {
+      "id": "event_webinar",
+      "name": "Event/Webinar",
+      "path": "./landing_pages/event_webinar",
+      "category": "landing-page",
+      "description": "Landing page para eventos e webinars com palestrantes e agenda"
+    },
+    {
+      "id": "recruitment_brand",
+      "name": "Recruitment/Employer Branding",
+      "path": "./landing_pages/recruitment_brand",
+      "category": "landing-page",
+      "description": "Página de carreiras com cultura, benefícios e vagas abertas"
+    },
+    {
+      "id": "product_story",
+      "name": "Product Story/Case Study",
+      "path": "./landing_pages/product_story",
+      "category": "landing-page",
+      "description": "Case de sucesso com problema, solução e resultados"
+    }
+  ],
+  "reports": [
+    {
+      "id": "excel_guided_report",
+      "name": "Excel Guided Report",
+      "path": "./reports/excel_guided_report",
+      "category": "report",
+      "description": "Gerador de relatórios Excel com template, gráficos e formatação"
+    },
+    {
+      "id": "interactive_report_web",
+      "name": "Interactive Web Report",
+      "path": "./reports/interactive_report_web",
+      "category": "report",
+      "description": "Relatório web interativo com filtros, gráficos e drill-down"
+    }
+  ],
   "services": [
     {
       "id": "agents-api",
@@ -93,7 +148,9 @@
     "ui": "shadcn/ui",
     "styling": "Tailwind CSS v4",
     "animations": "Framer Motion",
-    "charts": "Recharts",
-    "icons": "Lucide React"
+    "charts": "Recharts / Chart.js",
+    "icons": "Lucide React",
+    "excel": "ExcelJS",
+    "pdf": "Playwright"
   }
 }

@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "badge": "Exclusive Launch",
+    "title": "Transform the way you work",
+    "subtitle": "Discover the new solution that will revolutionize your productivity. Sign up for early access.",
+    "cta": "Get Early Access",
+    "learnMore": "Learn More"
+  },
+  "countdown": {
+    "title": "Launching in",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Min",
+    "seconds": "Sec"
+  },
+  "features": {
+    "title": "Why choose our solution?",
+    "subtitle": "Built with you in mind, with features that make a difference.",
+    "items": [
+      {
+        "icon": "⚡",
+        "title": "Ultra Fast",
+        "description": "Optimized performance so you don't waste time."
+      },
+      {
+        "icon": "🔒",
+        "title": "Secure",
+        "description": "Your data protected with cutting-edge encryption."
+      },
+      {
+        "icon": "🎯",
+        "title": "Intuitive",
+        "description": "Simple interface anyone can use."
+      },
+      {
+        "icon": "🚀",
+        "title": "Scalable",
+        "description": "Grows with your business without limits."
+      },
+      {
+        "icon": "💡",
+        "title": "Smart",
+        "description": "Integrated AI to automate repetitive tasks."
+      },
+      {
+        "icon": "🌍",
+        "title": "Global",
+        "description": "Available anywhere, anytime."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Don't miss the launch",
+    "subtitle": "Be the first to experience it. Limited spots for beta access.",
+    "placeholder": "Your best email",
+    "button": "Secure My Spot"
+  },
+  "footer": {
+    "copyright": "© 2024 Your Company. All rights reserved."
+  },
+  "ui": {
+    "theme": "Theme",
+    "language": "Language"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "header": {
+    "type": "Free Webinar",
+    "title": "Mastering Modern Development",
+    "date": "January 15, 2025",
+    "time": "2:00 PM - 4:00 PM EST",
+    "location": "Online via Zoom",
+    "cta": "Register for Free"
+  },
+  "speakers": {
+    "title": "Speakers",
+    "subtitle": "Learn from industry experts",
+    "list": [
+      {
+        "avatar": "👨‍💻",
+        "name": "John Smith",
+        "role": "Tech Lead @ TechCorp",
+        "bio": "10+ years of experience in software development and system architecture."
+      },
+      {
+        "avatar": "👩‍💼",
+        "name": "Mary Johnson",
+        "role": "CTO @ StartupX",
+        "bio": "Expert in scalability and engineering culture."
+      },
+      {
+        "avatar": "👨‍🔬",
+        "name": "Peter Brown",
+        "role": "DevRel @ CloudCo",
+        "bio": "Passionate about sharing knowledge and building communities."
+      }
+    ]
+  },
+  "agenda": {
+    "title": "Agenda",
+    "subtitle": "What you will learn",
+    "items": [
+      {
+        "time": "2:00 PM",
+        "title": "Opening and Welcome",
+        "description": "Introduction to the topic and speaker presentations"
+      },
+      {
+        "time": "2:15 PM",
+        "title": "Development Trends 2025",
+        "description": "Key technologies and practices shaping the future"
+      },
+      {
+        "time": "3:00 PM",
+        "title": "Live Demo",
+        "description": "Practical demonstration of presented techniques"
+      },
+      {
+        "time": "3:30 PM",
+        "title": "Q&A",
+        "description": "Questions and answers with the speakers"
+      }
+    ]
+  },
+  "register": {
+    "title": "Reserve your spot",
+    "subtitle": "Limited seats - Register now!",
+    "name": "Full name",
+    "email": "Email",
+    "company": "Company (optional)",
+    "button": "Confirm Registration"
+  },
+  "footer": {
+    "copyright": "© 2024 Your Company. All rights reserved."
+  }
+}
