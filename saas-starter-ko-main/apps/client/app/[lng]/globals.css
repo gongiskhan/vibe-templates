@@ -1,0 +1,3 @@
+@import "@saas/ui/tailwind.css";
+@source "../app/**/*.{ts,tsx}";
+@source "../../../../packages/ui/**/*.{ts,tsx}";

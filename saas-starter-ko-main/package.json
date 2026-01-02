@@ -1,0 +1,32 @@
+{
+  "name": "saas-starter",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "pnpm --filter client dev",
+    "build": "pnpm --filter client build",
+    "start": "pnpm --filter client start",
+    "db:setup": "pnpm --filter client db:setup",
+    "db:seed": "pnpm --filter client db:seed",
+    "db:generate": "pnpm --filter client db:generate",
+    "db:migrate": "pnpm --filter client db:migrate",
+    "db:studio": "pnpm --filter client db:studio",
+    "db:reset": "pnpm --filter client db:reset"
+  },
+  "engines": {
+    "node": ">=22.11.0",
+    "pnpm": ">=9.14.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "pnpm": "9.14.2",
+    "typescript": "^5.7.3"
+  }
+}

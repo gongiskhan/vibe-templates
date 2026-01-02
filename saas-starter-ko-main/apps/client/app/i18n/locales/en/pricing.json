@@ -1,0 +1,18 @@
+{
+  "Base": "Base",
+  "Plus": "Plus",
+  "trial": "with {{trialDays}} {{unit}} free trial",
+  "unit_day": "day",
+  "unit_week": "week",
+  "unit_month": "month",
+  "unit_year": "year",
+  "price": "per user / {{interval}} {{unit}}",
+  "unlimited_usage": "Unlimited Usage",
+  "unlimited_members": "Unlimited Workspace Members",
+  "email_support": "Email Support",
+  "base_plus": "Everything in Base, and:",
+  "new_feature_plus": "Early Access to New Features",
+  "CS_plus": "24/7 Support + Slack Access",
+  "button": "Get Started",
+  "loading": "Loading…"
+}

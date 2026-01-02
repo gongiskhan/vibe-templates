@@ -1,0 +1,11 @@
+{
+  "extends": "@saas/tsconfig/app.json",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["app", ".next/types/**/*.ts", "types/next-auth.d.ts"]
+}

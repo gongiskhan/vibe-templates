@@ -9,6 +9,7 @@ node_modules/
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+.yarn/install-state.gz
 
 # testing
 coverage/
@@ -16,6 +17,12 @@ test-results/
 .nyc_output/
 playwright-report/
 playwright/.cache/
+blob-report/
+
+# cypress
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
 
 # next.js (match anywhere in repo)
 .next/
@@ -31,6 +38,8 @@ dist/
 .cache/
 .turbo/
 .parcel-cache/
+.eslintcache
+.history/
 
 # debug
 npm-debug.log*
@@ -38,8 +47,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files (keep .env.example for documentation)
+.env
+.env.local
+.env*.local
+!.env.example
+!.env.local.example
 
 # vercel
 .vercel
@@ -51,10 +64,35 @@ next-env.d.ts
 # IDE
 .idea/
 .vscode/
+.cursor/
 *.swp
 *.swo
 
 # OS files
 Thumbs.db
 
+# AdminJS
+.adminjs/
+
+# Clerk (may contain secrets)
+.clerk/
+
+# Docker volumes
+postgres_data/
+
+# Databases (local dev)
+*.sqlite
+*.sqlite3
+*.db
+!drizzle/*.sql
+
+# Sitemap (generated)
+robots.txt
+sitemap.xml
+sitemap-*.xml
+
+# Backup directories
+backup/
+jsons/
+examples/
 
