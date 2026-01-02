@@ -1,0 +1,23 @@
+{
+  "template_id": "ai-assistant",
+  "name": "AI Assistant",
+  "version": "1.0.0",
+  "description": "An AI-powered chat assistant with RAG capabilities, document processing (PDF, DOCX), and local vector search using LanceDB",
+  "stack": ["nextjs", "typescript", "tailwind", "radix-ui", "framer-motion", "lancedb"],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "features": {
+    "darkMode": true,
+    "documentUpload": true,
+    "ragSearch": true,
+    "streaming": true
+  },
+  "branding": {
+    "description": "Supports custom branding through Tailwind CSS configuration"
+  }
+}

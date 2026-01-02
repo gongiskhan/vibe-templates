@@ -1,0 +1,28 @@
+{
+  "template_id": "next-starter",
+  "name": "Next.js Starter",
+  "version": "1.0.0",
+  "description": "A production-ready Next.js starter with authentication (Auth.js), Stripe payments, Drizzle ORM, internationalization, and comprehensive testing setup",
+  "stack": ["nextjs", "typescript", "tailwind", "authjs", "stripe", "drizzle", "next-intl", "playwright", "jest"],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint",
+    "test": "npm run test",
+    "e2e": "npm run e2e"
+  },
+  "features": {
+    "authentication": true,
+    "payments": true,
+    "database": true,
+    "i18n": true,
+    "testing": true,
+    "darkMode": true,
+    "turbopack": true
+  },
+  "branding": {
+    "description": "Customize theme through Tailwind CSS and next-themes"
+  }
+}

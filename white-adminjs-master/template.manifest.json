@@ -1,0 +1,21 @@
+{
+  "template_id": "white-adminjs",
+  "name": "AdminJS Backend",
+  "version": "1.0.0",
+  "description": "A backend admin panel using AdminJS with Express and MongoDB/Mongoose. Provides auto-generated CRUD interfaces for your data models",
+  "stack": ["adminjs", "express", "mongoose", "mongodb", "typescript"],
+  "recommended_commands": {
+    "install": "npm install",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "features": {
+    "adminPanel": true,
+    "database": true,
+    "crud": true
+  },
+  "branding": {
+    "description": "Customize AdminJS theme through its configuration options"
+  }
+}

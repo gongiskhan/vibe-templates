@@ -1,0 +1,26 @@
+{
+  "template_id": "materio-mui-admin",
+  "name": "Materio MUI Admin Dashboard",
+  "version": "1.0.0",
+  "description": "A Material-UI admin dashboard template with both JavaScript and TypeScript versions. Use the typescript-version folder for the full template",
+  "stack": ["nextjs", "typescript", "tailwind", "mui", "emotion", "apexcharts"],
+  "recommended_commands": {
+    "install": "cd typescript-version && npm install",
+    "dev": "cd typescript-version && npm run dev",
+    "build": "cd typescript-version && npm run build",
+    "start": "cd typescript-version && npm run start",
+    "lint": "cd typescript-version && npm run lint"
+  },
+  "features": {
+    "materialUI": true,
+    "charts": true,
+    "darkMode": true,
+    "iconSystem": true
+  },
+  "directories": {
+    "source": "typescript-version"
+  },
+  "branding": {
+    "description": "Customize through MUI theme configuration and Tailwind CSS"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "template_id": "nextjs-auth-starter",
+  "name": "Next.js Auth Starter (Clerk)",
+  "version": "1.0.0",
+  "description": "A minimal Next.js starter with Clerk authentication pre-configured, featuring Turbopack and modern tooling",
+  "stack": ["nextjs", "typescript", "tailwind", "clerk"],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "features": {
+    "authentication": true,
+    "turbopack": true
+  },
+  "branding": {
+    "description": "Customize through Tailwind CSS configuration"
+  }
+}

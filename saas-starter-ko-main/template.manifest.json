@@ -1,0 +1,25 @@
+{
+  "template_id": "saas-starter-ko",
+  "name": "SaaS Starter (Minimal)",
+  "version": "1.0.0",
+  "description": "A minimal SaaS starter with authentication, Stripe payments, Drizzle ORM, and PostgreSQL database integration",
+  "stack": ["nextjs", "typescript", "tailwind", "drizzle", "postgresql", "stripe", "radix-ui"],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "db:setup": "npm run db:setup",
+    "db:migrate": "npm run db:migrate"
+  },
+  "features": {
+    "authentication": true,
+    "payments": true,
+    "database": true,
+    "migrations": true,
+    "turbopack": true
+  },
+  "branding": {
+    "description": "Customize through Tailwind CSS and Radix UI theming"
+  }
+}

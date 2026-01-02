@@ -1,0 +1,23 @@
+{
+  "template_id": "saas-starter",
+  "name": "SaaS Starter",
+  "version": "1.0.0",
+  "description": "A SaaS starter template using pnpm workspaces with a client app. Features database integration with Drizzle ORM and PostgreSQL",
+  "stack": ["nextjs", "typescript", "tailwind", "drizzle", "postgresql", "pnpm-workspaces"],
+  "recommended_commands": {
+    "install": "pnpm install",
+    "dev": "pnpm dev",
+    "build": "pnpm build",
+    "start": "pnpm start",
+    "db:setup": "pnpm db:setup",
+    "db:migrate": "pnpm db:migrate"
+  },
+  "features": {
+    "database": true,
+    "monorepo": true,
+    "migrations": true
+  },
+  "branding": {
+    "description": "Customize through Tailwind CSS in the client app"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "template_id": "next-shadcn-admin-dashboard",
+  "name": "Next.js shadcn Admin Dashboard",
+  "version": "2.2.0",
+  "description": "A modern admin dashboard built with shadcn/ui components, featuring theme presets, data tables, charts, and drag-and-drop functionality",
+  "stack": ["nextjs", "typescript", "tailwind", "shadcn-ui", "radix-ui", "recharts", "react-hook-form", "zustand"],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "features": {
+    "themePresets": true,
+    "darkMode": true,
+    "dataTables": true,
+    "charts": true,
+    "dragAndDrop": true,
+    "forms": true,
+    "commandPalette": true
+  },
+  "branding": {
+    "description": "Supports theme presets and customization through CSS variables"
+  }
+}

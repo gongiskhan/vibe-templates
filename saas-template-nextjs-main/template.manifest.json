@@ -1,0 +1,26 @@
+{
+  "template_id": "saas-template-nextjs",
+  "name": "SaaS Template (Stack Auth)",
+  "version": "1.0.0",
+  "description": "A comprehensive SaaS template with Stack authentication, Stripe payments, Neon PostgreSQL, Drizzle ORM, and feature flags support",
+  "stack": ["nextjs", "typescript", "tailwind", "stackauth", "stripe", "drizzle", "neon", "radix-ui"],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "db:migrate": "npm run db:migrate",
+    "db:studio": "npm run db:studio"
+  },
+  "features": {
+    "authentication": true,
+    "payments": true,
+    "database": true,
+    "featureFlags": true,
+    "darkMode": true,
+    "commandPalette": true
+  },
+  "branding": {
+    "description": "Customize through Tailwind CSS and next-themes"
+  }
+}

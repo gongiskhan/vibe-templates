@@ -1,0 +1,25 @@
+{
+  "template_id": "free-nextjs-admin-dashboard",
+  "name": "Free Next.js Admin Dashboard",
+  "version": "2.2.2",
+  "description": "A comprehensive admin dashboard with charts, calendar, drag-and-drop, maps, and data visualization components",
+  "stack": ["nextjs", "typescript", "tailwind", "apexcharts", "fullcalendar", "react-dnd"],
+  "recommended_commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint"
+  },
+  "features": {
+    "charts": true,
+    "calendar": true,
+    "dragAndDrop": true,
+    "maps": true,
+    "tables": true,
+    "fileUpload": true
+  },
+  "branding": {
+    "description": "Customize colors and typography through Tailwind configuration"
+  }
+}
